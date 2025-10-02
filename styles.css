@@ -1,0 +1,35 @@
+/* ========== ALL ========== */
+
+body {
+    text-align: center;
+    padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 0 200px;
+    }
+}
+/* ========== Dashboard ========== */
+.btn {
+    padding: 5px 20px;
+    border-radius: 3px;
+    color: inherit;
+    text-decoration: none;
+    background-color: lightgray;
+}
+
+
+/* ========== Golden Talon Challenge Page ========== */
+.golden-talon-challenges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.challenge {
+    background: lightgray;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
