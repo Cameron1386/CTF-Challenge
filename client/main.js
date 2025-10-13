@@ -17,7 +17,7 @@ function initPopupLogic() {
             const storyline = el.dataset.storyline;
             const challengeNumber = parseInt(el.dataset.challenge, 10);
 
-            popupBody.innerHTML = getPopupContent(storyline, challengeNumber);
+            popupBody.innerHTML = getPopupContent(storyline, challengeNumber); 
 
             popup.style.display = 'flex';
         })

@@ -7,11 +7,13 @@ body {
 
 @media (min-width: 768px) {
     body {
-        padding: 0 200px;
+        padding: 0 20%;
     }
 }
 /* ========== Dashboard ========== */
 .btn {
+    border: 0;
+    cursor: pointer;
     padding: 5px 20px;
     border-radius: 3px;
     color: inherit;
