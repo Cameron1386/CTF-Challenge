@@ -1,4 +1,4 @@
-fetch('../js-injection/popup.html')
+fetch('../../js-injection/popup.html')
     .then(res => res.text())
     .then(html => {
         document.body.insertAdjacentHTML('beforeend', html);
