@@ -37,8 +37,7 @@ app.post('/api/submit', async (req, res) => {
     if (isMatch) {
       return res.json({ success: true, message: 'Correct flag!' });
     } else {
-      console.log('FLAG1_HASH from env:', process.env.FLAG1_HASH);
-      console.log(answer, flagHash)
+
       return res.status(401).json({ success: false, message: 'Incorrect flag.' });
     }
 
