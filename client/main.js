@@ -115,12 +115,65 @@ function getPopupContent(storyline, challengeNumber) {
             case 3:
                 return `<h1>Challenge 3</h1>`
             case 4:
-                return `<h1>Challenge 4</h1>`
+                return `
+                <h1>Challenge 4</h1>
+                <textarea id="code" placeholder="Write your Python code here...">print("Hello from Python!")</textarea>
+                <br><br>
+                <button onclick="runCode()">Run Code</button>
+                <h3>Output:</h3>
+                <pre id="output"></pre>
+                `
             case 5:
-                return `<h1>Challenge 5</h1>`
+                return `
+                <h1>Challenge 5</h1>
+                <textarea id="code" placeholder="Write your Python code here...">print("Hello from Python!")</textarea>
+                <br><br>
+                <button onclick="runCode()">Run Code</button>
+                <h3>Output:</h3>
+                <pre id="output"></pre>
+                `
             case 6:
-                return `<h1>Challenge 6</h1>`
+                return `
+                <h1>Challenge 6</h1>
+                <textarea id="code" placeholder="Write your Python code here...">print("Hello from Python!")</textarea>
+                <br><br>
+                <button onclick="runCode()">Run Code</button>
+                <h3>Output:</h3>
+                <pre id="output"></pre>`
         }
     }
 }
 
+let pyodideReadyPromise = loadPyodide();
+
+    async function runCode() {
+      const output = document.getElementById("output");
+      const code = document.getElementById("code").value;
+      output.textContent = "Running...";
+      try {
+        const pyodide = await pyodideReadyPromise;
+
+        // Capture stdout and stderr
+        let stdout = "";
+        let stderr = "";
+
+        pyodide.setStdout({
+          batched: (text) => { stdout += text; }
+        });
+        pyodide.setStderr({
+          batched: (text) => { stderr += text; }
+        });
+
+        await pyodide.loadPackagesFromImports(code);
+        let result = await pyodide.runPythonAsync(code);
+
+        // Combine outputs
+        output.textContent =
+          (stdout ? stdout : "") +
+          (result !== undefined ? `\n[Return value]: ${result}` : "") +
+          (stderr ? `\n[Errors]:\n${stderr}` : "");
+
+      } catch (err) {
+        output.textContent = "Execution error:\n" + err;
+      }
+    }
