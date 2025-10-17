@@ -81,3 +81,21 @@ pre {
     border: 1px solid #ccc;
     white-space: pre-wrap;
 }
+
+/* ========== Challenge Links ========== */
+.challenge-link {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.challenge-link:hover {
+    background: #0056b3;
+    color: white;
+    text-decoration: none;
+}
