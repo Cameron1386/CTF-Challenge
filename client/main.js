@@ -231,7 +231,7 @@ async function runCode() {
     try {
         const pyodide = await pyodideReadyPromise;
 
-        // Capture stdout and stderr
+        // Capture stdout and stder
         let stdout = "";
         let stderr = "";
 
