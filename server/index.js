@@ -40,7 +40,8 @@ app.post('/api/submit', async (req, res) => {
     // Fallback to hardcoded flags if env vars not set
     if (!flagHash) {
       const hardcodedFlags = {
-        '1': '$2b$10$kNqcRlTJ9RuxEqtM6LAkk.QZN08oMROSbSl7XG.hubpGNFXwYwkam' // TALON{hidden_in_plain_sight_1337}
+        '1': '$2b$10$kNqcRlTJ9RuxEqtM6LAkk.QZN08oMROSbSl7XG.hubpGNFXwYwkam', // TALON{hidden_in_plain_sight_1337}
+        '3': '$2b$10$08LIlz/aS5ldDqv3gQbmJuEqC9JTeRFEfkikTlO1YgmyYfsT84hWC'  // TALON{chatroom_secrets_revealed_2024}
       };
       flagHash = hardcodedFlags[challenge];
     }

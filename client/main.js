@@ -160,10 +160,19 @@ function getChallenge2Content() {
 }
 
 /**
- * Challenge 3: Placeholder
+ * Challenge 3: The Secret Chatroom
  */
 function getChallenge3Content() {
-    return '<h1>Challenge 3</h1><p>Coming soon...</p>';
+    return `
+        <h1>Challenge 3: The Secret Chatroom</h1>
+        <p>The Golden Talon has been using a secure chatroom to coordinate their operations. Our intelligence suggests they've been careless with their security practices.</p>
+        <p>Infiltrate their chatroom and gather intelligence. Look for hidden information, secret codes, and the flag.</p>
+        <p><strong>Hint:</strong> Inspect the page source, check comments, and look for hidden elements. They might have left sensitive information in plain sight!</p>
+        <a href="talon-chatroom/talon-chatroom-page.html" target="_blank" class="challenge-link">
+            Access Golden Talon Chatroom
+        </a>
+        <p><em>Note: The chatroom is interactive - you can send messages and see responses. But focus on finding the hidden intelligence!</em></p>
+    `;
 }
 
 /**
