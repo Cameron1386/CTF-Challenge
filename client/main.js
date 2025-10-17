@@ -108,7 +108,7 @@ function getPopupContent(storyline, challengeNumber) {
                 <p>The Golden Talon has been bragging about their secret forum where they discuss their "master plans". They think it's hidden, but we know better.</p>
                 <p>Click the link below to visit their subdomain and inspect the page to find their forum link and the flag.</p>
                 <p><strong>Hint:</strong> Right-click and "Inspect Element" or press F12 to view the page source.</p>
-                <a href="client/pages/talon/talon-secret/index.html" target="_blank" style="display: inline-block; background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin: 10px 0;">Visit Talon's Secret Subdomain</a>
+                <a href="talon-secret/index.html" target="_blank" style="display: inline-block; background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin: 10px 0;">Visit Talon's Secret Subdomain</a>
                 <p><em>Note: Make sure to find both the forum link and the flag hidden in the page source!</em></p>`
             case 2:
                 return `<h1>Challenge 2</h1>`
