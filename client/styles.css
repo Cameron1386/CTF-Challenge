@@ -85,8 +85,8 @@ pre {
 /* ========== Challenge Links ========== */
 .challenge-link {
     display: inline-block;
-    background: #007bff;
-    color: white;
+    background: lightgray;
+    color: black;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -94,8 +94,13 @@ pre {
     transition: background-color 0.3s ease;
 }
 
-.challenge-link:hover {
-    background: #0056b3;
-    color: white;
-    text-decoration: none;
+/* ========== Ch1 Page ========== */
+
+#talon-ch1-page {
+    padding: 0;
+    justify-content: left;
+    background-color: black;
+    color: green;
+    text-align: start;
+    font-family: monospace;
 }
