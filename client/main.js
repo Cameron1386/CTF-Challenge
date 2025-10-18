@@ -145,10 +145,7 @@ function getChallenge1Content() {
         <p>The Golden Talon has been bragging about their secret forum where they discuss their "master plans". They think it's hidden, but we know better.</p>
         <p>Click the link below to visit their subdomain and inspect the page to find their forum link and the flag.</p>
         <p><strong>Hint:</strong> Right-click and "Inspect Element" or press F12 to view the page source.</p>
-        <a href="talon-secret/talon-secret-page.html" target="_blank" class="challenge-link">
-            Visit Talon's Secret Subdomain
-        </a>
-        <p><em>Note: Make sure to find both the forum link and the flag hidden in the page source!</em></p>
+        <a href="talon-secret/talon-secret-page.html">talon-secret/talon-secret-page.html</a>
     `;
 }
 
@@ -181,7 +178,21 @@ function getChallenge3Content() {
 function getChallenge4Content() {
     return `
         <h1>Challenge 4</h1>
-        <textarea id="code" placeholder="Write your Python code here...">print("Hello from Python!")</textarea>
+        <textarea id="code" placeholder="Write your Python code here...">flag_part10 = 'nt_'
+flag_part2 = "ON{"
+flag_part1 = "TAL"
+flag_part3 = 'add'
+flag_part4 = '_up_'
+flag_part5 = "ev"
+flag_part7 = 'thing'
+flag_part6 = "ery"
+flag_part11 = 'statments}'
+flag_part8 = "_in"
+flag_part9 = "_the_pri"
+flag_part10 = 'nt_'
+
+
+print(flag_part2 + flag_part2 + flag_part3 + flag_part4 + flag_part5 + flag_part7 + flag_part8 + flag_part9 + flag_part10 + flag_part10)</textarea>
         <br><br>
         <button onclick="runCode()">Run Code</button>
         <h3>Output:</h3>

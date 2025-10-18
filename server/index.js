@@ -32,6 +32,7 @@ app.post('/api/submit', async (req, res) => {
     // Build env var name dynamically: FLAG1_HASH, FLAG2_HASH, ...
     const envVarName = `FLAG${challenge}_HASH`;
     let flagHash = process.env[envVarName];
+    
 
     if (!flagHash) {
       return res.status(404).json({ success: false, message: 'Challenge not found' });

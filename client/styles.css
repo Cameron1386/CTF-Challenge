@@ -12,6 +12,7 @@ body {
 }
 /* ========== Dashboard ========== */
 .btn {
+    margin: 10px;
     border: 0;
     cursor: pointer;
     padding: 5px 20px;
@@ -67,6 +68,12 @@ body {
     cursor: pointer;
 }
 
+
+#userInput {
+    padding: 4px 0;
+    width: 50%;
+}
+
 /* ========== IDE ========== */
 
 textarea {
@@ -76,6 +83,7 @@ textarea {
     font-size: 16px;
 }
 pre {
+    text-align: start;
     background: #f4f4f4;
     padding: 10px;
     border: 1px solid #ccc;
