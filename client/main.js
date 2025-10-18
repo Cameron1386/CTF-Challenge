@@ -153,7 +153,15 @@ function getChallenge1Content() {
  * Challenge 2: Placeholder
  */
 function getChallenge2Content() {
-    return '<h1>Challenge 2</h1><p>Coming soon...</p>';
+    return `
+        <h1>Challenge 2: The Golden Talon Forum</h1>
+        <p>Our intelligence has discovered a secret forum used by The Golden Talon organization. They've been discussing their operations and sharing techniques for creating harmless digital pranks.</p>
+        <p>Infiltrate their forum and gather intelligence about their activities. Look for hidden clues, secret codes, and any information that might help us understand their methods.</p>
+        <p><strong>Hint:</strong> Pay attention to the forum posts - they might contain hidden messages or clues. Some members mention secret codes and hidden elements!</p>
+        <a href="talon-rot13/talon-rot13-forum.html" target="_blank" class="challenge-link">
+            Access Golden Talon Forum
+        </a>
+    `;
 }
 
 /**
