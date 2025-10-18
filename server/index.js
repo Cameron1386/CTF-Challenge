@@ -20,10 +20,6 @@ app.get('/talon-secret', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/pages/talon/talon-secret/talon-secret-page.html'));
 });
 
-// Handle talon-secret subdomain with any path
-app.get('/talon-secret/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/pages/talon/talon-secret/talon-secret-page.html'));
-});
 
 app.post('/api/submit', async (req, res) => {
   try {
