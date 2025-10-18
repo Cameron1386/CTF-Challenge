@@ -2,119 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Golden Talon - Secure Chatroom</title>
-    <link rel="stylesheet" href="talon-chatroom-styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Talon Chatroom</title>
+    <link rel="stylesheet" href="../../../styles.css">
 </head>
 <body>
-    <div class="chatroom-container">
-        <main class="chatroom-main">
-            <aside class="sidebar">
-                <h3>Online Members</h3>
-                <ul class="user-list" id="userList">
-                    <!-- Users will be populated by JavaScript -->
-                </ul>
-                
-                <h3>Channel Info</h3>
-                <div style="font-size: 12px; color: #888; margin-top: 20px;">
-                    <p><strong>Encryption:</strong> AES-256</p>
-                    <p><strong>Status:</strong> Secure</p>
-                    <p><strong>Members:</strong> 5</p>
-                    <p><strong>Last Activity:</strong> Now</p>
-                </div>
-            </aside>
-
-            <section class="chat-area">
-                <div class="messages-container" id="messagesContainer">
-                    <!-- Messages will be populated by JavaScript -->
-                    
-                    <!-- Hidden messages with incriminating evidence -->
-                    <div class="hidden-message">FLAG: TALON{chatroom_secrets_revealed_2024}</div>
-                    <div class="hidden-message">Bank vault combination: 47-23-91</div>
-                    <div class="hidden-message">Emergency meeting location: Warehouse 47, Industrial District</div>
-                    <div class="hidden-message">Security guard password: GOLDEN2024</div>
-                    <div class="hidden-message">Next target: First National Bank - Downtown Branch</div>
-                    <div class="hidden-message">Escape route: Underground tunnels behind the bank</div>
-                    <div class="hidden-message">Contact: 555-SECRET for urgent matters</div>
-                    <div class="hidden-message">Inside man: Night security guard - code name "Shadow"</div>
-                    <div class="hidden-message">Backup plan: Disguise as maintenance workers</div>
-                    <div class="hidden-message">Weapons cache: Abandoned factory on 5th street</div>
-                    <div class="hidden-message">Police informant: Officer Martinez - keep him away</div>
-                    <div class="hidden-message">Money laundering account: Swiss Bank #73915</div>
-                </div>
-                
-                <div class="typing-indicator" id="typingIndicator" style="display: none;">
-                    <!-- Typing indicator will be shown by JavaScript -->
-                </div>
-
-                <div class="input-area">
-                    <div class="input-container">
-                        <input 
-                            type="text" 
-                            id="messageInput" 
-                            class="message-input" 
-                            placeholder="Type your message here... (Press Enter to send)"
-                            maxlength="500"
-                        >
-                        <button id="sendButton" class="send-button">Send</button>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Hidden elements for CTF challenge -->
-    
-    <!-- Hidden flag in HTML comment -->
-    <!-- 
-    FLAG: TALON{chatroom_secrets_revealed_2024}
-    -->
-    
-    <!-- Hidden information in various places -->
-    <div class="hidden-flag">
-        <p>Secret Meeting Location: Warehouse 47, Industrial District</p>
-        <p>Next Operation: Bank Heist - Downtown Branch</p>
-        <p>Contact: Use encrypted email with subject "Golden Eagle"</p>
-    </div>
-    
-    <!-- Hidden in script tag comment -->
-    <script>
-        // This script contains hidden information
-        /*
-        SECRET OPERATION DETAILS:
-        - Target: First National Bank
-        - Date: Next Friday, 3 AM
-        - Team: 5 members
-        - Escape Route: Through the underground tunnels
-        - Backup Plan: Disguise as security guards
-        */
-    </script>
-    
-    <!-- Hidden in CSS comment -->
-    <style>
-        /* 
-        .secret-info {
-            display: none;
-        }
-        <div class="secret-info">
-            <p>Password for the vault: GOLDEN2024</p>
-            <p>Security codes: 7-3-9-1-5</p>
+    <div class="chatroom">
+        <div class="chat-header">Golden Talon Secure Chat • 5 online</div>
+        
+        <div class="chat-messages">
+            <div class="msg user">GoldenEagle: Everyone ready for tonight's operation?</div>
+            <div class="msg other">CyberHawk: Affirmative. All systems are go.</div>
+            <div class="msg other">DigitalFalcon: The target's security has been analyzed.</div>
+            <div class="msg other">ShadowRaven: Remember, keep all communications encrypted.</div>
+            <div class="msg user">GoldenEagle: The authorities are monitoring our channels.</div>
+            <div class="msg other">PhantomOwl: Roger that. Switching to secure channel.</div>
+            
+            <!-- Hidden messages -->
+            <div class="hidden">FLAG: TALON{chatroom_secrets_revealed_2024}</div>
+            <div class="hidden">Bank vault combination: 47-23-91</div>
+            <div class="hidden">Meeting location: Warehouse 47</div>
+            <div class="hidden">Security password: GOLDEN2024</div>
+            <div class="hidden">Next target: First National Bank</div>
+            <div class="hidden">Escape route: Underground tunnels</div>
+            <div class="hidden">Contact: 555-SECRET</div>
+            <div class="hidden">Inside man: Night security guard</div>
         </div>
-        */
-    </style>
-    
-    <!-- Hidden in data attributes -->
-    <div data-secret="Vault combination: 47-23-91" class="hidden-flag"></div>
-    <div data-meeting="Emergency meeting at 2 AM, abandoned factory" class="hidden-flag"></div>
-    
-    <!-- Hidden in meta tags -->
-    <meta name="secret-operation" content="Bank vault access code: 73915">
-    <meta name="emergency-contact" content="Call 555-SECRET for urgent matters">
-    
-    <!-- Hidden in title attributes -->
-    <div title="The real target is the jewelry store next door" class="hidden-flag">Hidden content</div>
-    <div title="Our inside man is the night security guard" class="hidden-flag">More secrets</div>
-
-    <script src="talon-chatroom-script.js"></script>
+        
+        <div class="chat-input">
+            <input type="text" placeholder="Type a message..." disabled>
+            <button disabled>Send</button>
+        </div>
+    </div>
 </body>
 </html>
