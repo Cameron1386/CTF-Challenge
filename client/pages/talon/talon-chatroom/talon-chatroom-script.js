@@ -21,7 +21,7 @@ class TalonChatroom {
         this.setupEventListeners();
         this.renderUserList();
         this.addSystemMessage('Welcome to the Golden Talon secure chatroom. All communications are encrypted.');
-        this.addSystemMessage('⚠️ WARNING: This chatroom may contain sensitive information. Inspect carefully!');
+        this.addSystemMessage('WARNING: This chatroom may contain sensitive information. Inspect carefully!');
         this.simulateChatActivity();
         this.addMobileInstructions();
     }
@@ -215,11 +215,11 @@ class TalonChatroom {
     addMobileInstructions() {
         // Add instructions for mobile users
         setTimeout(() => {
-            this.addSystemMessage('💡 TIP: Try selecting text in the chat area - you might find hidden information!');
+            this.addSystemMessage('TIP: Try selecting text in the chat area - you might find hidden information!');
         }, 3000);
         
         setTimeout(() => {
-            this.addSystemMessage('🔍 HINT: Look for invisible messages that blend with the background...');
+            this.addSystemMessage('HINT: Look for invisible messages that blend with the background...');
         }, 6000);
     }
 }
