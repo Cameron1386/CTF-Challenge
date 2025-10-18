@@ -251,7 +251,6 @@ result = ???
 
 # Step 4: Complete the print statement
 # Remember: use str() to convert numbers to strings!
-# Format should be: TALON{math_is_15_plus_7_equals_22}
 print(flag_part1 + flag_part2 + flag_part3 + str(???) + flag_part4 + str(???) + flag_part5 + str(???) + flag_part6)</textarea>
         <br><br>
         <button onclick="runCode()">Run Code</button>
