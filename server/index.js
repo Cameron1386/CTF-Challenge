@@ -20,10 +20,6 @@ app.get('/talon-secret', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/pages/talon/talon-secret/talon-secret-page.html'));
 });
 
-// Handle talon-secret subdomain with any path
-app.get('/talon-secret/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/pages/talon/talon-secret/talon-secret-page.html'));
-});
 
 app.post('/api/submit', async (req, res) => {
   try {
@@ -37,13 +33,6 @@ app.post('/api/submit', async (req, res) => {
     const envVarName = `FLAG${challenge}_HASH`;
     let flagHash = process.env[envVarName];
     
-    // Fallback to hardcoded flags if env vars not set
-    if (!flagHash) {
-      const hardcodedFlags = {
-        '1': '$2b$10$kNqcRlTJ9RuxEqtM6LAkk.QZN08oMROSbSl7XG.hubpGNFXwYwkam' // TALON{hidden_in_plain_sight_1337}
-      };
-      flagHash = hardcodedFlags[challenge];
-    }
 
     if (!flagHash) {
       return res.status(404).json({ success: false, message: 'Challenge not found' });
