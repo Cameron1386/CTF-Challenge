@@ -227,15 +227,39 @@ function getChallenge5Content() {
  */
 function getChallenge6Content() {
     return `
-        <h1>Challenge 6</h1>
-        <textarea id="code" placeholder="Write your Python code here...">print("Hello from Python!")</textarea>
+        <h1>Challenge 6: Code Breaker</h1>
+        <p>The Golden Talon thought they were clever using math to hide their flag. Prove them wrong!</p>
+        <textarea id="code" placeholder="Write your Python code here...">a = 5
+b = 10
+c = 3
+
+flag_part1 = "TALON{"
+flag_part2 = "math_"
+flag_part3 = "is_"
+flag_part4 = "_plus_"
+flag_part5 = "_equals_"
+flag_part6 = "}"
+
+# Step 1: Calculate the first part (a + b)
+first_number = ???
+
+# Step 2: Calculate the second part (b - c)
+second_number = ???
+
+# Step 3: Calculate the final result (a + b + b - c)
+result = ???
+
+# Step 4: Complete the print statement
+# Remember: use str() to convert numbers to strings!
+# Format should be: TALON{math_is_15_plus_7_equals_22}
+print(flag_part1 + flag_part2 + flag_part3 + str(???) + flag_part4 + str(???) + flag_part5 + str(???) + flag_part6)</textarea>
         <br><br>
         <button onclick="runCode()">Run Code</button>
         <h3>Output:</h3>
         <pre id="output"></pre>
+        <p><em>Hint: Replace all ??? with the correct variable names or calculations. Don't forget str() to convert numbers to strings!</em></p>
     `;
 }
-
 // Python execution functionality
 let pyodideReadyPromise = loadPyodide();
 
