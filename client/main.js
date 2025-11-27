@@ -214,13 +214,34 @@ print(flag_part2 + flag_part2 + flag_part3 + flag_part4 + flag_part5 + flag_part
 function getChallenge5Content() {
     return `
         <h1>Challenge 5</h1>
-        <textarea id="code" placeholder="Write your Python code here...">print("Hello from Python!")</textarea>
+        <p>The hackers thought that they could hide their code in a special array. However, we cracked the algorithm they use to decrypt it, but there's an error. Fix it and you can find the flag.</p>
+        <p><strong>Hint:</strong> The bug is in the <code>for</code> loop — pay close attention to the <code>range</code> and in what order you're looping through the array indices!</p>
+        <textarea id="code" placeholder="Write your Python code here...">
+x = [
+    ["M", "M", "I", "=", "O"],
+    ["A", "d", "c", "K", "v"],
+    ["q", "p", "B", "-", "t"],
+    ["b", "c", "P", "n", "j"],
+    ["|", "q", "q", "a", "m"],
+]
+
+for row in x:
+    for i in range(len(row), -1, -1):
+        char = row[i]
+        num = ord(char)
+        num += i + 1
+        new_char = chr(num)
+
+        print(new_char)
+        </textarea>
         <br><br>
         <button onclick="runCode()">Run Code</button>
         <h3>Output:</h3>
         <pre id="output"></pre>
     `;
 }
+
+
 
 /**
  * Challenge 6: Python Code Execution
