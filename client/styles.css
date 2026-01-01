@@ -1,3 +1,7 @@
+@import url(' ./pages/talon/talon-rot13/rot13.css');
+@import url(' ./pages/talon/talon-chatroom/chatroom.css');
+@import url(' ./pages/talon/talon-secret/secret.css');
+
 /* ========== ALL ========== */
 body {
     text-align: center;
