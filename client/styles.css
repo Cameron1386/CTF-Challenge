@@ -4,24 +4,23 @@
 
 /* ========== ALL ========== */
 body {
+    margin: 0;
     text-align: center;
-    padding: 0 15px;
-}
-
-@media (min-width: 768px) {
-    body {
-        padding: 0 20%;
-    }
-}
-
-/* ========== Header ========== */
-body.dashboard {
     margin: 0;
     padding: 0;
     background-color: #000000;
     color: white;
     font-family: 'Segoe UI', sans-serif;
 }
+
+/*@media (min-width: 768px) {
+    body {
+        padding: 0 20%;
+    }
+}
+*/
+/* ========== Header ========== */
+
 
 .main-header {
     display: flex;
@@ -122,7 +121,7 @@ body.dashboard {
 }
 
 .popup-content {
-    background: #fff;
+    background: #1D1D1D;
     padding: 15px;
     border-radius: 8px;
     max-width: 600px;
