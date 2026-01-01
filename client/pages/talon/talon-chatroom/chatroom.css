@@ -1,0 +1,64 @@
+/* ========== Chatroom Styles ========== */
+.chatroom {
+    background: #000;
+    color: #e0e0e0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.chat-header {
+    border-bottom: 1px solid #333;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.msg {
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 5px;
+    max-width: 80%;
+    color: #e0e0e0;
+}
+
+.msg.user {
+    background: #2a2a2a;
+    margin-left: auto;
+}
+
+.msg.other {
+    background: #1a1a1a;
+    border-left: 4px solid #666;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    background: #000;
+    border: 1px solid #333;
+    padding: 10px 12px;
+    margin-right: 10px;
+    font-family: monospace;
+    font-size: 14px;
+    border-radius: 3px;
+    color: #e0e0e0;
+}
