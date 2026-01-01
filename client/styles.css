@@ -1,6 +1,9 @@
 @import url(' ./pages/talon/talon-rot13/rot13.css');
 @import url(' ./pages/talon/talon-chatroom/chatroom.css');
 @import url(' ./pages/talon/talon-secret/secret.css');
+@import url(' ./aesthetics/landing.css');
+@import url(' ./aesthetics/story.css');
+@import url(' ./aesthetics/talon.css');
 
 /* ========== ALL ========== */
 body {
