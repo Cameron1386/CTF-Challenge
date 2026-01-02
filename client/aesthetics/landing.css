@@ -1,0 +1,61 @@
+/* ========== HERO ========== */
+.hero {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    min-height: 60vh;
+    background: linear-gradient(to bottom, #2c2c2c 20%, #474646)
+}
+
+.hero-content > h1 {
+    font-size: clamp(30px, 4vw, 70px);
+    font-weight: 600;
+}
+
+.hero-content > .btn {
+    margin-left: 15%;
+    color: black;
+    background-color: #ABFF04;
+    font-size: 20px;
+    max-width: fit-content;
+    padding: 10px 30px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+    gap: 10vh;
+}
+
+/* ========== DESCRIPTION ========== */
+
+.bg-svg {
+    position: absolute;
+    inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+    z-index: -1;              /* behind everything */
+    pointer-events: none;     /* doesn't block clicks */
+
+
+    transform: translate(-12%, 70%) rotate(-15deg);
+    width: 120vw;
+}
+
+.description > h2 {
+        font-size: clamp(20px, 4vw, 50px);
+        padding: 40px;
+}
+
+.box {
+    background-color: white;
+    padding: 10vw;
+    border: 5px solid #ABFF04;
+    border-radius: 5px;
+}
+
+.boxes {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: space-evenly;
+}

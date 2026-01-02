@@ -1,12 +1,10 @@
-@import url(' ./pages/talon/talon-rot13/rot13.css');
-@import url(' ./pages/talon/talon-chatroom/chatroom.css');
-@import url(' ./pages/talon/talon-secret/secret.css');
 @import url(' ./aesthetics/landing.css');
 @import url(' ./aesthetics/story.css');
 @import url(' ./aesthetics/talon.css');
 
 /* ========== ALL ========== */
 body {
+    overflow-x: hidden;
     margin: 0;
     text-align: center;
     margin: 0;
@@ -16,22 +14,26 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/*@media (min-width: 768px) {
-    body {
-        padding: 0 20%;
+h1, h2, h3, p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    body > *:not(#header) {
+        padding: 0 10vw;
     }
 }
-*/
+
 /* ========== Header ========== */
 
 
 .main-header {
+    font-family: sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background-color: #1a1110;
-    border-bottom: 1px solid #333;
+    padding: 20px 30px;
+    background-color: #1D1D1D;
 }
 
 .header-left,
@@ -84,7 +86,8 @@ body {
     border-radius: 3px;
     color: inherit;
     text-decoration: none;
-    background-color: lightgray;
+    color: white;
+    background-color: black;
 }
 
 .golden-talon-challenges {
