@@ -62,3 +62,10 @@
     border-radius: 3px;
     color: #e0e0e0;
 }
+
+
+.hidden {
+    color: #000;
+    padding: 8px 12px;
+    margin: 5px 0;
+}
