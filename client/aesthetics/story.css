@@ -1,0 +1,54 @@
+/* ========== Introduction ========== */
+
+.introduction > h1 {
+    font-size: clamp(30px, 4vw, 60px);
+    padding: 5vw;
+}
+
+.levels {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.level {
+    background: #333333;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.level > .btn {
+    display: flex;
+    align-self: flex-end;
+    font-size: clamp(13px, 2vw, 22px);
+    max-width: fit-content;
+    padding: 12px 35px;
+}
+
+.level-content {
+    max-width: 35vw;
+}
+
+.level-content > h2 {
+    font-size: clamp(25px, 3vw, 50px);
+}
+
+.level-content > p {
+    font-size: clamp(13px, 2vw, 22px);
+}
+
+/* ========== BACKGROUND ========== */
+
+.bg-svg-stories {
+    position: absolute;
+    inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+    z-index: -1;              /* behind everything */
+    pointer-events: none;     /* doesn't block clicks */
+
+
+    transform: translate(-23%, 55%) rotate(25deg);
+    width: 120vw;
+}

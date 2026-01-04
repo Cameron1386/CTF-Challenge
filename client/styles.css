@@ -18,6 +18,14 @@ h1, h2, h3, p {
     margin: 0;
 }
 
+.background {
+    position: fixed;
+    inset: 0;
+    background-color: #1d1d1d;
+    z-index: -2;
+}
+
+
 @media (min-width: 768px) {
     body > *:not(#header) {
         padding: 0 10vw;
@@ -72,10 +80,6 @@ h1, h2, h3, p {
     border-radius: 50%;
 }
 
-.introduction,
-.golden-talon {
-    padding: 40px;
-}
 
 /* ========== Dashboard & Buttons ========== */
 .btn {
@@ -90,31 +94,6 @@ h1, h2, h3, p {
     background-color: black;
 }
 
-.golden-talon-challenges {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.challenge {
-    background: lightgray;
-    padding: 15px;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.challenge-link {
-    display: inline-block;
-    background: lightgray;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px 0;
-    transition: background-color 0.3s ease;
-}
-
 /* ========== Pop-up ========== */
 .popup {
     display: none;
@@ -127,12 +106,13 @@ h1, h2, h3, p {
 }
 
 .popup-content {
+    min-width: 70vw;
     background: #1D1D1D;
     padding: 15px;
     border-radius: 8px;
-    max-width: 600px;
     width: 90%;
     position: relative;
+    font-size: clamp(10px, 1vw, 16px);
 }
 
 .close-btn {
@@ -141,4 +121,33 @@ h1, h2, h3, p {
     right: 15px;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* ========== IDE ========== */
+
+.terminal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+textarea {
+    grid-row: 1;
+    grid-column: 1 / 2;
+    background-color: #1D1D1D;
+    color: white;
+    width: 95%;
+    height: 50vh;
+    font-family: monospace;
+    font-size: clamp(10px, 1vw, 16px);
+}
+pre {
+    margin: 0;
+    grid-row: 1;
+    grid-column: 2 / 3;
+    font-size: clamp(6px, 1vw, 10px);
+    background-color: #1D1D1D;
+    color: white;
+    text-align: start;
+    border: 1px solid #ccc;
+    white-space: pre-wrap;
 }

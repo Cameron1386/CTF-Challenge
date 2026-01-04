@@ -151,7 +151,7 @@ function getChallenge1Content() {
         <p>The Golden Talon has been bragging about their secret forum where they discuss their "master plans". They think it's hidden, but we know better.</p>
         <p>Click the link below to visit their subdomain and inspect the page to find their forum link and the flag.</p>
         <p><strong>Hint:</strong> Right-click and "Inspect Element" or press F12 to view the page source.</p>
-        <a href="talon-secret/talon-secret-page.html">talon-secret/talon-secret-page.html</a>
+        <a class="challenge-link" href="talon-secret/talon-secret-page.html">Secret Forum</a>
     `;
 }
 
@@ -192,6 +192,7 @@ function getChallenge3Content() {
 function getChallenge4Content() {
     return `
         <h1>Challenge 4</h1>
+        <div class="terminal">
         <textarea id="code" placeholder="Write your Python code here...">flag_part10 = 'nt_'
 flag_part2 = "ON{"
 flag_part1 = "TAL"
@@ -208,10 +209,9 @@ flag_part10 = 'nt_'
 
 print(flag_part2 + flag_part2 + flag_part3 + flag_part4 + flag_part5 + flag_part7 + flag_part8 + flag_part9 + flag_part10 + flag_part10)</textarea>
         <br><br>
-        <button onclick="runCode()">Run Code</button>
-        <h3>Output:</h3>
         <pre id="output"></pre>
-    `;
+    </div>
+    <button onclick="runCode()">Run Code</button>`;
 }
 
 /**
@@ -222,6 +222,7 @@ function getChallenge5Content() {
         <h1>Challenge 5</h1>
         <p>The hackers thought that they could hide their code in a special array. However, we cracked the algorithm they use to decrypt it, but there's an error. Fix it and you can find the flag.</p>
         <p><strong>Hint:</strong> The bug is in the <code>for</code> loop — pay close attention to the <code>range</code> and in what order you're looping through the array indices!</p>
+        <div class="terminal">
         <textarea id="code" placeholder="Write your Python code here...">
 x = [
     ["M", "M", "I", "=", "O"],
@@ -241,10 +242,9 @@ for row in x:
         print(new_char)
         </textarea>
         <br><br>
-        <button onclick="runCode()">Run Code</button>
-        <h3>Output:</h3>
         <pre id="output"></pre>
-    `;
+    </div>
+    <button onclick="runCode()">Run Code</button>`;
 }
 
 
@@ -256,6 +256,7 @@ function getChallenge6Content() {
     return `
         <h1>Challenge 6: Code Breaker</h1>
         <p>The Golden Talon thought they were clever using math to hide their flag. Prove them wrong!</p>
+        <div class="terminal">
         <textarea id="code" placeholder="Write your Python code here...">a = 5
 b = 10
 c = 3
@@ -280,11 +281,10 @@ result = ???
 # Remember: use str() to convert numbers to strings!
 print(flag_part1 + flag_part2 + flag_part3 + str(???) + flag_part4 + str(???) + flag_part5 + str(???) + flag_part6)</textarea>
         <br><br>
-        <button onclick="runCode()">Run Code</button>
-        <h3>Output:</h3>
         <pre id="output"></pre>
-        <p><em>Hint: Replace all ??? with the correct variable names or calculations. Don't forget str() to convert numbers to strings!</em></p>
-    `;
+    </div>
+    <button onclick="runCode()">Run Code</button>
+    <p><em>Hint: Replace all ??? with the correct variable names or calculations. Don't forget str() to convert numbers to strings!</em></p>`;
 }
 // Python execution functionality
 let pyodideReadyPromise = loadPyodide();

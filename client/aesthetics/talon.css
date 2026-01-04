@@ -1,0 +1,60 @@
+/* ========== TITLE ========== */
+
+.golden-talon-introduction > p {
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+}
+
+.golden-talon-introduction > h1 {
+    font-size: clamp(30px, 4vw, 70px);
+}
+
+
+/* ========== CHALLENGES ========== */
+
+.golden-talon-challenges {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.challenges {
+    grid-row: 1 / 2;
+    display: grid;
+    position: relative;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.challenge {
+    background: #333333;
+    color: white;
+    width: 30vw;
+    justify-self: center;
+    padding: 5vh;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    border: 5px solid #6A9E01;
+}
+
+.challenge-link {
+    display: inline-block;
+    background: lightgray;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+/* ========== BACKGROUND ========== */
+
+.bg-svg-talon {    
+    grid-row: 1 / 4;        /* top:0 right:0 bottom:0 left:0 */
+    z-index: -1;              /* behind everything */
+    pointer-events: none; 
+    height: 200vh; 
+    padding: 0 10vw;
+}
