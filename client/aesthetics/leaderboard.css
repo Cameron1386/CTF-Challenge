@@ -1,0 +1,47 @@
+body {
+    background-color: #0f0f0f; 
+    color: #ffffff;
+}
+
+.leaderboard-container {
+    padding: 0 !important;
+    margin-top: 5vh;
+    min-height: 20vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaderboard {
+  border-collapse: collapse;
+  width: 40vw;
+  background: #252525;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+.leaderboard th,
+.leaderboard td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.leaderboard thead {
+  background: #1d1d1d;
+  border-radius: 5px;
+  color: white;
+}
+
+.bg-svg-leaderboard {
+    padding: 0 !important;
+    justify-self: center;
+    position: absolute;
+    inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+    z-index: -1;              /* behind everything */
+    pointer-events: none;     /* doesn't block clicks */
+    min-width: 10vw;
+    overflow-y: hidden;
+}
