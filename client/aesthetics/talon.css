@@ -38,6 +38,18 @@
     border: 5px solid #6A9E01;
 }
 
+.challenge.solved {
+    background: #161616;
+    color: white;
+    width: 30vw;
+    justify-self: center;
+    padding: 5vh;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    border: 3px solid #6A9E01;
+}
+
 .challenge-link {
     display: inline-block;
     background: lightgray;

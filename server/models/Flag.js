@@ -1,9 +1,20 @@
 import mongoose from "mongoose";
 
-const FlagSchema = new mongoose.Schema({
-  name: String,
-  hash: String,
-  points: Number
+const flagSchema = new mongoose.Schema({
+  challengeId: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  hash: {
+    type: String,
+    required: true
+  },
+  points: {
+    type: Number,
+    default: 100
+  }
 });
 
-export default mongoose.model("Flag", FlagSchema);
+export default mongoose.model("Flag", flagSchema);
+

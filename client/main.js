@@ -13,6 +13,8 @@ fetch("/js-injection/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
+      setupProfileDropdown();
+      showUsername();
     })
 /**
  * Initialize popup functionality
@@ -33,7 +35,7 @@ function initPopupLogic() {
             
             // Reset form elements
             const hidden = document.getElementById('challengeId');
-            if (hidden) hidden.value = String(challengeNumber);
+            if (hidden) hidden.value = `flag${challengeNumber}`;
 
             const userInput = document.getElementById('userInput');
             if (userInput) userInput.value = '';
@@ -75,6 +77,16 @@ async function handleFlagSubmission(e) {
     const answer = document.getElementById('userInput')?.value.trim();
     const submitMessage = document.getElementById('submitMessage');
 
+    // Check if user is logged in
+    const token = localStorage.getItem('token');
+    if (!token) {
+        if (submitMessage) {
+            submitMessage.textContent = "You must be logged in to submit flags.";
+            submitMessage.style.color = "red";
+        }
+        return; // stop execution if not logged in
+    }
+
     // Show loading state
     if (submitMessage) {
         submitMessage.textContent = 'Checking...';
@@ -91,25 +103,44 @@ async function handleFlagSubmission(e) {
     }
 
     try {
-        const res = await fetch('/api/submit', {
+        // Send request to your backend submit route
+        const res = await fetch('http://localhost:3000/api/submit', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            },
             body: JSON.stringify({ challenge, answer })
         });
 
-        const data = await res.json();
+        // Try to parse JSON safely
+        let data;
+        try {
+            data = await res.json();
+        } catch (jsonErr) {
+            console.error("Failed to parse JSON:", jsonErr);
+            if (submitMessage) {
+                submitMessage.textContent = 'Server error — invalid response.';
+                submitMessage.style.color = 'red';
+            }
+            return;
+        }
 
+        // Handle success/failure based on backend response
         if (res.ok && data.success) {
             if (submitMessage) {
                 submitMessage.textContent = data.message || 'Correct!';
                 submitMessage.style.color = 'green';
             }
+
+
         } else {
             if (submitMessage) {
                 submitMessage.textContent = data.message || 'Incorrect flag.';
                 submitMessage.style.color = 'red';
             }
         }
+
     } catch (err) {
         console.error('Flag submit error:', err);
         if (submitMessage) {
@@ -118,6 +149,7 @@ async function handleFlagSubmission(e) {
         }
     }
 }
+
 
 /**
  * Get popup content based on storyline and challenge number
@@ -366,6 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // store JWT in localStorage
       localStorage.setItem("token", data.token);
+      showUsername();
 
       // redirect or update UI
       alert("Login successful!");
@@ -380,7 +413,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function showUsername() {
   const token = localStorage.getItem("token");
-  if (!token) return; // user not logged in
+
+  // DOM elements
+  const loginLink = document.getElementById("log-in");       // header login
+  const loginBtn = document.querySelector(".login-btn");     // button in login form
+  const profileContainer = document.getElementById("profileContainer");
+  const profileCircle = document.getElementById("profileCircle");
+  const userDisplay = document.getElementById("userDisplay");
+
+  if (!token) {
+    // Not logged in → show login, hide profile
+    if (loginLink) loginLink.style.display = "inline-block";
+    if (loginBtn) loginBtn.style.display = "inline-block";
+    if (profileContainer) profileContainer.style.display = "none";
+    if (userDisplay) userDisplay.textContent = "";
+    return;
+  }
 
   try {
     const res = await fetch("http://localhost:3000/me", {
@@ -389,16 +437,31 @@ async function showUsername() {
       }
     });
 
-    if (!res.ok) return;
+    if (!res.ok) {
+      // Invalid token → treat as logged out
+      if (loginLink) loginLink.style.display = "inline-block";
+      if (loginBtn) loginBtn.style.display = "inline-block";
+      if (profileContainer) profileContainer.style.display = "none";
+      if (userDisplay) userDisplay.textContent = "";
+      return;
+    }
 
     const user = await res.json();
-    const userDisplay = document.getElementById("userDisplay");
 
-    if (userDisplay) {
-      // Replace the login button with the username
-      const loginBtn = document.querySelector(".login-btn");
-      if (loginBtn) loginBtn.style.display = "none"; // hide button
-      userDisplay.textContent = `Logged in as ${user.username}`;
+    // Hide login, show profile
+    if (loginLink) loginLink.style.display = "none";
+    if (loginBtn) loginBtn.style.display = "none";
+    if (profileContainer) profileContainer.style.display = "inline-block";
+    if (profileCircle) profileCircle.style.display = "inline-block";
+
+    if (userDisplay) userDisplay.textContent = `Logged in as ${user.username}`;
+
+    // Mark solved challenges
+    if (user.solvedFlags && Array.isArray(user.solvedFlags)) {
+      user.solvedFlags.forEach(challengeId => {
+        const el = document.querySelector(`.challenge[data-challenge='${challengeId.replace("flag","")}']`);
+        if (el) el.classList.add("solved");
+      });
     }
 
   } catch (err) {
@@ -406,6 +469,107 @@ async function showUsername() {
   }
 }
 
+
+
 // Call this when page loads
 document.addEventListener("DOMContentLoaded", showUsername);
+
+
+// LEADERBOARD FUNCTIONALITY
+
+async function loadLeaderboard() {
+    const tbody = document.querySelector(".leaderboard tbody");
+    if (!tbody) return;
+
+    try {
+        const res = await fetch("http://localhost:3000/leaderboard");
+        const data = await res.json();
+
+        if (!data.success) {
+            tbody.innerHTML = "<tr><td colspan='3'>Failed to load leaderboard</td></tr>";
+            return;
+        }
+
+        tbody.innerHTML = ""; // clear existing rows
+
+        data.users.forEach((user, index) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${user.username}</td>
+                <td>${user.score}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    } catch (err) {
+        console.error(err);
+        tbody.innerHTML = "<tr><td colspan='3'>Error loading leaderboard</td></tr>";
+    }
+}
+
+// Call when the page loads
+document.addEventListener("DOMContentLoaded", loadLeaderboard);
+
+function setupProfileDropdown() {
+  const token = localStorage.getItem("token");
+
+  // DOM elements
+  const profileContainer = document.getElementById("profileContainer");
+  const profileCircle = document.getElementById("profileCircle");
+  const profileMenu = document.getElementById("profileMenu");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const loginLink = document.getElementById("log-in");       // header login
+  const loginBtn = document.querySelector(".login-btn");     // login form button
+  const userDisplay = document.getElementById("userDisplay");
+
+  // Safety: exit if elements not found
+  //if (!profileContainer || !profileCircle || !profileMenu || !logoutBtn || !loginLink) return;
+
+  if (!token) {
+    // Not logged in → hide profile
+    profileContainer.style.display = "none";
+    return;
+  }
+
+  // Logged in → show profile circle
+  profileContainer.style.display = "inline-block";
+
+  // Toggle dropdown menu on click
+  profileCircle.onclick = () => {
+    profileMenu.style.display = profileMenu.style.display === "none" ? "block" : "none";
+  };
+
+  // Logout functionality
+  logoutBtn.onclick = () => {
+    localStorage.removeItem("token");
+    profileMenu.style.display = "none";
+
+    // Hide profile, show login buttons
+    profileContainer.style.display = "none";
+    if (loginLink) loginLink.style.display = "inline-block";
+    if (loginBtn) loginBtn.style.display = "inline-block";
+    if (userDisplay) userDisplay.textContent = "";
+
+    alert("Logged out!");
+  };
+
+  // Hide menu if clicked outside
+  window.onclick = (e) => {
+    if (!profileContainer.contains(e.target)) {
+      profileMenu.style.display = "none";
+    }
+  };
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

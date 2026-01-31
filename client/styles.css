@@ -40,7 +40,7 @@ h1, h2, h3, p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 5vw;
     background-color: #1D1D1D;
 }
 
@@ -75,10 +75,28 @@ h1, h2, h3, p {
 }
 
 .profile-circle {
-    width: 35px;
-    height: 35px;
-    background-color: #ffeaea;
-    border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #333;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #3f3f3f;
+    width: 6vw;
+    border-radius: 5px;
+    display: none;
 }
 
 
@@ -93,6 +111,17 @@ h1, h2, h3, p {
     text-decoration: none;
     color: white;
     background-color: black;
+}
+
+.dropdown-btn {
+    all: unset;
+    margin: 10px;
+    border: 0;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 3px;
+    color: inherit;
+    color: white;
 }
 
 /* ========== Pop-up ========== */
