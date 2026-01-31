@@ -1,7 +1,7 @@
 // CTF Challenge - Main JavaScript File
 
 // Load popup HTML and initialize
-fetch('/client/js-injection/popup.html')
+fetch('/js-injection/popup.html')
     .then(res => res.text())
     .then(html => {
         document.body.insertAdjacentHTML('beforeend', html);
@@ -9,7 +9,7 @@ fetch('/client/js-injection/popup.html')
     });
 
 
-fetch("/client/js-injection/header.html")
+fetch("/js-injection/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
@@ -46,9 +46,11 @@ function initPopupLogic() {
     });
 
     // Close popup functionality
+    if (closeBtn) {
     closeBtn.addEventListener('click', () => {
         popup.style.display = 'none';
     });
+    }
 
     window.addEventListener('click', e => {
         if (e.target === popup) {
@@ -287,7 +289,17 @@ print(flag_part1 + flag_part2 + flag_part3 + str(???) + flag_part4 + str(???) + 
     <p><em>Hint: Replace all ??? with the correct variable names or calculations. Don't forget str() to convert numbers to strings!</em></p>`;
 }
 // Python execution functionality
-let pyodideReadyPromise = loadPyodide();
+let pyodideReadyPromise = null;
+
+async function getPyodide() {
+  if (!pyodideReadyPromise) {
+    if (typeof loadPyodide !== "function") {
+      throw new Error("Pyodide not loaded yet");
+    }
+    pyodideReadyPromise = loadPyodide();
+  }
+  return pyodideReadyPromise;
+}
 
 /**
  * Run Python code using Pyodide
@@ -298,7 +310,7 @@ async function runCode() {
     output.textContent = "Running...";
     
     try {
-        const pyodide = await pyodideReadyPromise;
+        const pyodide = await getPyodide();
 
         // Capture stdout and stder
         let stdout = "";
