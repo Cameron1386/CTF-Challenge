@@ -336,3 +336,76 @@ async function runCode() {
         output.textContent = "Execution error:\n" + err;
     }
 }
+
+//LOG IN
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("loginForm");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const res = await fetch("http://127.0.0.1:3000/auth/login", { // note port 3000
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error || "Login failed");
+        return;
+      }
+
+      // store JWT in localStorage
+      localStorage.setItem("token", data.token);
+
+      // redirect or update UI
+      alert("Login successful!");
+      // window.location.href = "/dashboard.html";
+
+    } catch (err) {
+      console.error(err);
+      alert("Server error");
+    }
+  });
+});
+
+async function showUsername() {
+  const token = localStorage.getItem("token");
+  if (!token) return; // user not logged in
+
+  try {
+    const res = await fetch("http://localhost:3000/me", {
+      headers: {
+        "Authorization": "Bearer " + token
+      }
+    });
+
+    if (!res.ok) return;
+
+    const user = await res.json();
+    const userDisplay = document.getElementById("userDisplay");
+
+    if (userDisplay) {
+      // Replace the login button with the username
+      const loginBtn = document.querySelector(".login-btn");
+      if (loginBtn) loginBtn.style.display = "none"; // hide button
+      userDisplay.textContent = `Logged in as ${user.username}`;
+    }
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// Call this when page loads
+document.addEventListener("DOMContentLoaded", showUsername);
+
