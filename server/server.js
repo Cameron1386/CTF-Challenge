@@ -6,13 +6,16 @@ import mongoose from "mongoose";
 import submitRoutes from "./routes/submit.js";
 import leaderboardRoutes from "./routes/leaderboard.js";
 
+const FRONTEND = "http://127.0.0.1:5500"
+
+
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "http://127.0.0.1:5500", // for testing only, allows any frontend to connect
+  origin: [FRONTEND, "ctf-challenge-9ylr2wwl6-camerons-projects-fe218799.vercel.app"], // for testing only, allows any frontend to connect
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));

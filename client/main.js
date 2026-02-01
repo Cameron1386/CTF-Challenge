@@ -1,5 +1,6 @@
 // CTF Challenge - Main JavaScript File
-
+const BACKEND = "http://localhost:3000"
+//const BACKEND = "https://overnervously-putrefiable-laure.ngrok-free.dev"
 // Load popup HTML and initialize
 fetch('/js-injection/popup.html')
     .then(res => res.text())
@@ -104,7 +105,7 @@ async function handleFlagSubmission(e) {
 
     try {
         // Send request to your backend submit route
-        const res = await fetch('http://localhost:3000/api/submit', {
+        const res = await fetch(BACKEND + '/api/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -383,7 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
 
     try {
-      const res = await fetch("http://127.0.0.1:3000/auth/login", { // note port 3000
+      const res = await fetch(BACKEND + "/auth/login", { // note port 3000
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -431,7 +432,7 @@ async function showUsername() {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/me", {
+    const res = await fetch(BACKEND + "/me", {
       headers: {
         "Authorization": "Bearer " + token
       }
@@ -482,7 +483,7 @@ async function loadLeaderboard() {
     if (!tbody) return;
 
     try {
-        const res = await fetch("http://localhost:3000/leaderboard");
+        const res = await fetch(BACKEND + "/leaderboard");
         const data = await res.json();
 
         if (!data.success) {

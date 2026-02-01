@@ -94,7 +94,6 @@ h1, h2, h3, p {
     transform: translateX(-50%);
 
     background-color: #3f3f3f;
-    width: 6vw;
     border-radius: 5px;
     display: none;
 }
