@@ -2,7 +2,7 @@
 const BACKEND = "http://localhost:3000"
 //const BACKEND = "https://overnervously-putrefiable-laure.ngrok-free.dev"
 // Load popup HTML and initialize
-fetch('/client/js-injection/popup.html')
+fetch('/js-injection/popup.html')
     .then(res => res.text())
     .then(html => {
         document.body.insertAdjacentHTML('beforeend', html);
@@ -10,7 +10,7 @@ fetch('/client/js-injection/popup.html')
     });
 
 
-fetch("/client/js-injection/header.html")
+fetch("/js-injection/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
@@ -73,7 +73,6 @@ function initPopupLogic() {
 }
 
 function initLandingAnimations() {
-    if (!document.querySelector('.hero')) return;
     if (!window.gsap) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -83,23 +82,20 @@ function initLandingAnimations() {
         gsap.registerPlugin(ScrollTrigger);
     }
 
-    gsap.set('.hero-content h1', { y: 30, opacity: 0 });
-    gsap.set('.hero-content .btn', { y: 20, opacity: 0, scale: 0.98 });
-    gsap.set('.bg-svg', { opacity: 0, y: 40, rotate: -8 });
-    gsap.set('.description h2', { y: 20, opacity: 0 });
-    gsap.set('.box', { y: 40, opacity: 0, scale: 0.98 });
+    gsap.set('h1', { y: 30, opacity: 0 });
+    gsap.set('.btn', { y: 20, opacity: 0, scale: 0.98 });
+    gsap.set('.bg-svg, .bg-svg-stories', { opacity: 0, y: 1200, rotate: 0 });
+    gsap.set('h2, p', { y: 20, opacity: 0 });
+    gsap.set('.box, .level, .challenge', { y: 40, opacity: 0, scale: 0.98 });
 
     const introTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     introTl
-        .to('.bg-svg', { opacity: 0.45, y: 0, rotate: -15, duration: 1.2 }, 0)
-        .to('.hero-content h1', { opacity: 1, y: 0, duration: 0.9 }, 0.15)
-        .to('.hero-content .btn', { opacity: 1, y: 0, scale: 1, duration: 0.7 }, 0.4);
+        .to('h1', { opacity: 1, y: 0, duration: 1.2 }, 0.15)
+        .to('.btn', { opacity: 1, y: 0, scale: 1, duration: 0.7 }, 0.4);
 
-    const floatTl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { ease: 'sine.inOut' } });
-    floatTl.to('.bg-svg', { y: -12, duration: 4 });
 
     if (window.ScrollTrigger) {
-        gsap.to('.description h2', {
+        gsap.to('h2, p', {
             opacity: 1,
             y: 0,
             duration: 0.7,
@@ -110,7 +106,15 @@ function initLandingAnimations() {
             }
         });
 
-        gsap.to('.box', {
+        gsap.to('.bg-svg', {
+            opacity: 1, y: 1000, rotate: -15, duration: 1.2,
+            scrollTrigger: {
+                trigger: '.boxes',
+                start: 'top 75%'
+            }
+        });
+
+        gsap.to('.box, .level, .challenge', {
             opacity: 1,
             y: 0,
             scale: 1,
@@ -124,7 +128,7 @@ function initLandingAnimations() {
         });
     }
 
-    const button = document.querySelector('.hero-content .btn');
+    const button = document.querySelector('.btn');
     if (button) {
         button.addEventListener('mouseenter', () => {
             gsap.to(button, { scale: 1.04, duration: 0.25, ease: 'power2.out' });
@@ -250,8 +254,8 @@ function getPopupContent(storyline, challengeNumber) {
 function getChallenge1Content() {
     return `
         <h1>Challenge 1: The Hidden Forum</h1>
-        <p>The Golden Talon has been bragging about their secret forum where they discuss their "master plans". They think it's hidden, but we know better.</p>
-        <p>Click the link below to visit their subdomain and inspect the page to find their forum link and the flag.</p>
+        <p>The Golden Talon has been bragging about their secret forum where they discuss their "master plans". They think it's hidden, but we know better.
+        Click the link below to visit their subdomain and inspect the page to find their forum link and the flag.</p>
         <p><strong>Hint:</strong> Right-click and "Inspect Element" or press F12 to view the page source.</p>
         <a class="challenge-link" href="talon-secret/talon-secret-page.html" target="_blank">Secret Forum</a>
     `;
@@ -263,8 +267,8 @@ function getChallenge1Content() {
 function getChallenge2Content() {
     return `
         <h1>Challenge 2: The Golden Talon Forum</h1>
-        <p>Our intelligence has discovered a secret forum used by The Golden Talon organization. They've been discussing their operations and sharing techniques for creating harmless digital pranks.</p>
-        <p>Infiltrate their forum and gather intelligence about their activities. Look for hidden clues, secret codes, and any information that might help us understand their methods.</p>
+        <p>Our intelligence has discovered a secret forum used by The Golden Talon organization. They've been discussing their operations and sharing techniques for creating harmless digital pranks.
+        Infiltrate their forum and gather intelligence about their activities. Look for hidden clues, secret codes, and any information that might help us understand their methods.</p>
         <p><strong>Hint:</strong> Pay attention to the forum posts - they might contain hidden messages or clues. Some members mention secret codes and hidden elements!</p>
         <a href="talon-rot13/talon-rot13-forum.html" target="_blank" class="challenge-link">
             Access Golden Talon Forum
@@ -278,8 +282,8 @@ function getChallenge2Content() {
 function getChallenge3Content() {
     return `
         <h1>Challenge 3: The Secret Chatroom</h1>
-        <p>The Golden Talon has been using a secure chatroom to coordinate their operations. Our intelligence suggests they've been careless with their security practices.</p>
-        <p>Infiltrate their chatroom and gather intelligence. Look for hidden information, secret codes, and the flag.</p>
+        <p>The Golden Talon has been using a secure chatroom to coordinate their operations. Our intelligence suggests they've been careless with their security practices.
+        Infiltrate their chatroom and gather intelligence. Look for hidden information, secret codes, and the flag.</p>
         <p><strong>Hint:</strong> Inspect the page source, check comments, and look for hidden elements. They might have left sensitive information in plain sight!</p>
         <a href="talon-chatroom/talon-chatroom-page.html" target="_blank" class="challenge-link">
             Access Golden Talon Chatroom
@@ -313,7 +317,7 @@ print(flag_part2 + flag_part2 + flag_part3 + flag_part4 + flag_part5 + flag_part
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button onclick="runCode()">Run Code</button>`;
+    <button class="btn" onclick="runCode()">Run Code</button>`;
 }
 
 /**

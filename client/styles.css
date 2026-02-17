@@ -11,7 +11,7 @@ body {
     padding: 0;
     background-color: #000000;
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lexend', 'Segoe UI', sans-serif;
 }
 
 h1, h2, h3, p {
@@ -32,11 +32,19 @@ h1, h2, h3, p {
     }
 }
 
+/* ========== FONTS ========== */
+
+@font-face {
+    font-family: "Lexend";
+    src: url("./fonts/Lexend-VariableFont_wght.ttf") format('truetype');
+    font-weight: 100-900;
+    font-style: normal;
+}
+
 /* ========== Header ========== */
 
 
 .main-header {
-    font-family: sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,8 +61,6 @@ h1, h2, h3, p {
 
 .logo {
     width: 60px;
-    height: 40px;
-    background-color: #ffeaea;
 }
 
 .CTFName {
@@ -124,6 +130,12 @@ h1, h2, h3, p {
 }
 
 /* ========== Pop-up ========== */
+#popup-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
 .popup {
     display: none;
     position: fixed;
@@ -135,11 +147,12 @@ h1, h2, h3, p {
 }
 
 .popup-content {
-    min-width: 70vw;
+
+    min-width: 30vw;
     background: #1D1D1D;
     padding: 15px;
     border-radius: 8px;
-    width: 90%;
+    width: 70%;
     position: relative;
     font-size: clamp(10px, 1vw, 16px);
 }

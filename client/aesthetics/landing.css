@@ -38,7 +38,7 @@
     pointer-events: none;     /* doesn't block clicks */
 
 
-    transform: translate(-12%, 130%) rotate(-15deg);
+    transform: translate(-12%, 800%) rotate(-15deg);
     width: 120vw;
 }
 

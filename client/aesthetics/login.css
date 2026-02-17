@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, sans-serif;
 }
 
 body {
@@ -13,6 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+
 }
 
 body > #header {
@@ -21,6 +21,7 @@ body > #header {
     flex-shrink: 0;
     width: 100%;
     align-self: stretch;
+    
 }
 
 body > .login-container {
@@ -29,12 +30,14 @@ body > .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 h2 {
     margin-bottom: 8px;
     font-size: 24px;
     font-weight: 600;
+    
 }
 
 p {
