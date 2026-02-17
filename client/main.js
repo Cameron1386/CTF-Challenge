@@ -2,7 +2,7 @@
 const BACKEND = "http://localhost:3000"
 //const BACKEND = "https://overnervously-putrefiable-laure.ngrok-free.dev"
 // Load popup HTML and initialize
-fetch('/js-injection/popup.html')
+fetch('/client/js-injection/popup.html')
     .then(res => res.text())
     .then(html => {
         document.body.insertAdjacentHTML('beforeend', html);
@@ -10,7 +10,7 @@ fetch('/js-injection/popup.html')
     });
 
 
-fetch("/js-injection/header.html")
+fetch("/client/js-injection/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;

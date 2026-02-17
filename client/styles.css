@@ -1,6 +1,6 @@
-@import url(' ./aesthetics/landing.css');
-@import url(' ./aesthetics/story.css');
-@import url(' ./aesthetics/talon.css');
+@import url('./aesthetics/landing.css');
+@import url('./aesthetics/story.css');
+@import url('./aesthetics/talon.css');
 
 /* ========== ALL ========== */
 body {
