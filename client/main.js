@@ -17,6 +17,10 @@ fetch("/client/js-injection/header.html")
       setupProfileDropdown();
       showUsername();
     })
+
+document.addEventListener('DOMContentLoaded', () => {
+        initLandingAnimations();
+});
 /**
  * Initialize popup functionality
  */
@@ -65,6 +69,69 @@ function initPopupLogic() {
     const flagForm = document.getElementById('flagForm');
     if (flagForm) {
         flagForm.addEventListener('submit', handleFlagSubmission);
+    }
+}
+
+function initLandingAnimations() {
+    if (!document.querySelector('.hero')) return;
+    if (!window.gsap) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    if (window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+
+    gsap.set('.hero-content h1', { y: 30, opacity: 0 });
+    gsap.set('.hero-content .btn', { y: 20, opacity: 0, scale: 0.98 });
+    gsap.set('.bg-svg', { opacity: 0, y: 40, rotate: -8 });
+    gsap.set('.description h2', { y: 20, opacity: 0 });
+    gsap.set('.box', { y: 40, opacity: 0, scale: 0.98 });
+
+    const introTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    introTl
+        .to('.bg-svg', { opacity: 0.45, y: 0, rotate: -15, duration: 1.2 }, 0)
+        .to('.hero-content h1', { opacity: 1, y: 0, duration: 0.9 }, 0.15)
+        .to('.hero-content .btn', { opacity: 1, y: 0, scale: 1, duration: 0.7 }, 0.4);
+
+    const floatTl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { ease: 'sine.inOut' } });
+    floatTl.to('.bg-svg', { y: -12, duration: 4 });
+
+    if (window.ScrollTrigger) {
+        gsap.to('.description h2', {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.description',
+                start: 'top 75%'
+            }
+        });
+
+        gsap.to('.box', {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: 'power2.out',
+            stagger: 0.15,
+            scrollTrigger: {
+                trigger: '.boxes',
+                start: 'top 75%'
+            }
+        });
+    }
+
+    const button = document.querySelector('.hero-content .btn');
+    if (button) {
+        button.addEventListener('mouseenter', () => {
+            gsap.to(button, { scale: 1.04, duration: 0.25, ease: 'power2.out' });
+        });
+        button.addEventListener('mouseleave', () => {
+            gsap.to(button, { scale: 1, duration: 0.25, ease: 'power2.out' });
+        });
     }
 }
 
