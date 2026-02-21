@@ -14,7 +14,6 @@
 <body class="dashboard">
     <div class="background"></div>
 
-        <img class="bg-svg-stories" src="/assets/svgviewer-output.svg" alt="">
 
     <div id="header"></div>
 
@@ -23,19 +22,42 @@
     </div>
 
     <div class="levels">
-        <div class="level" id="golden-talon">
-            <div class="level-content">
-                <h2>The Golden Talon</h2>
-                <p>The Golden Talon is a flashy, sloppy cybergang that loves bragging online. They post “mini puzzles” and weak
-                    web apps for fun. This arc is meant to get you warmed up with simple challenges.</p>
-            </div>
-            <a class="btn" href="./talon/golden-talon.html">Get Started</a>
+        <div class="outer-level">
+            <div class="claw claw-left"></div>
+            <div class="claw claw-right"></div>
 
+            <div class="level" id="golden-talon">
+                <div class="level-content">
+                    <h2>The Golden Talon</h2>
+                    <p>The Golden Talon is a flashy, sloppy cybergang that loves bragging online. They post “mini puzzles” and weak
+                        web apps for fun. This arc is meant to get you warmed up with simple challenges.</p>
+                </div>
+
+                <a class="btn" href="./talon/golden-talon.html">Get Started</a>
+            </div>
         </div>
 
-        <div class="level" id="kharza"></div>
+        <div class="outer-level">
+            <div class="level" id="kharza">
+                <div class="level-content">
+                    <h2>The Kharza</h2>
+                    <p>The Golden Talon is a flashy, sloppy cybergang that loves bragging online. They post “mini puzzles” and weak
+                        web apps for fun. This arc is meant to get you warmed up with simple challenges.</p>
+                </div>
+            </div>            
+        </div>
+
     </div>
 
+    <svg width="0" height="0" style="position:absolute">
+    <defs>
+        <clipPath id="claw" clipPathUnits="objectBoundingBox">
+        <path d="M 0.33 1 C 0.55 0.97 0.85 0.92 0.95 0.87 C 1.03 0.80 1.03 0.70 0.97 0.60 C 0.89 0.48 0.74 0.37 0.60 0.26 C 0.46 0.15 0.36 0.04 0.35 0 C 0.31 0.07 0.21 0.19 0.14 0.32 C 0.06 0.46 0.04 0.61 0.12 0.76 C 0.18 0.87 0.27 0.95 0.33 1 Z"/>
+        </clipPath>
+    </defs>
+    </svg>
+
+<footer id="footer"></footer>
 </body>
 
 </html>

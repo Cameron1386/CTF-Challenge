@@ -31,26 +31,20 @@
 
 /* ========== DESCRIPTION ========== */
 
-.bg-svg {
-    position: absolute;
-    inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
-    z-index: -1;              /* behind everything */
-    pointer-events: none;     /* doesn't block clicks */
 
-
-    transform: translate(-12%, 800%) rotate(-15deg);
-    width: 120vw;
-}
 
 .description > h2 {
         font-size: clamp(20px, 4vw, 50px);
         padding: 40px;
 }
 
+/*
 .description {
-    padding-bottom: 12vh;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
-
+*/
 .box {
     background-color: white;
     padding: 10vw;
@@ -59,8 +53,8 @@
 }
 
 .boxes {
-    margin-top: 20vh;
+    padding: 15vh 0;
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 12vh;
+    align-items:center;
 }

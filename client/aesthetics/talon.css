@@ -14,28 +14,34 @@
 
 .golden-talon-challenges {
     display: grid;
-    grid-template-columns: 1fr 10fr;
-    grid-template-rows: 1fr 1fr;
+    padding-bottom: 15vh !important;
 }
 
 .challenges {
     grid-row: 1 / 2;
     display: grid;
     position: relative;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
 }
 
 .challenge {
-    background: #333333;
-    color: white;
-    width: 30vw;
+    background: #181818;
+    color: #ddd;
+    width: 300px;
+    padding: 50px;
     justify-self: center;
-    padding: 5vh;
     border-radius: 4px;
     text-align: center;
     cursor: pointer;
-    border: 5px solid #6A9E01;
+    border: 3px solid gold;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.challenge:hover {
+    background: #202020;
+    border-color: rgba(255, 215, 0, 0.6);
+    transform: translateY(-2px);
 }
 
 .challenge.solved {
@@ -62,11 +68,3 @@
 }
 
 /* ========== BACKGROUND ========== */
-
-.bg-svg-talon {    
-    grid-row: 1 / 4;        /* top:0 right:0 bottom:0 left:0 */
-    z-index: -1;              /* behind everything */
-    pointer-events: none; 
-    height: 200vh; 
-    padding: 0 10vw;
-}

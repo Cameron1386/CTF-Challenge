@@ -9,6 +9,12 @@ fetch('/js-injection/popup.html')
         initPopupLogic();
     });
 
+fetch('/js-injection/footer.html')
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
+
 
 fetch("/js-injection/header.html")
     .then(response => response.text())
@@ -110,7 +116,7 @@ function initLandingAnimations() {
             opacity: 1, y: 1000, rotate: -15, duration: 1.2,
             scrollTrigger: {
                 trigger: '.boxes',
-                start: 'top 75%'
+                start: 'top 90%'
             }
         });
 
@@ -123,7 +129,7 @@ function initLandingAnimations() {
             stagger: 0.15,
             scrollTrigger: {
                 trigger: '.boxes',
-                start: 'top 75%'
+                start: 'top 50%'
             }
         });
     }

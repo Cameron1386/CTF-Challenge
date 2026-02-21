@@ -2,13 +2,12 @@
 
 .introduction > h1 {
     font-size: clamp(30px, 4vw, 60px);
-    padding: 5vw;
+    padding: 1vw;
 }
 
 .levels {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
 }
 
 .level {
@@ -18,14 +17,46 @@
     text-align: center;
     display: flex;
     justify-content: space-between;
+    text-align: left;
+}
+
+.outer-level {
+    position: relative;
+    padding: 3vw 1vw 0 1vw;
+}
+
+#golden-talon {
+    border: 2px solid gold;
+    position: relative;
+}
+
+.claw {
+  position: absolute;
+  width: 5vw;
+  height: 10vw;
+  background: gold;
+  clip-path: url(#claw);
+}
+.claw-left {
+  left: 0;
+  top: 0;
+}
+
+/* Right horn (mirrored) */
+.claw-right {
+    top: 0;
+  right: 0;
+  transform:scaleX(-1);
 }
 
 .level > .btn {
     display: flex;
     align-self: flex-end;
-    font-size: clamp(13px, 2vw, 22px);
+    font-size: clamp(12px, 2vw, 18px);
     max-width: fit-content;
     padding: 12px 35px;
+    background-color: gold;
+    color: black;
 }
 
 .level-content {
@@ -33,22 +64,11 @@
 }
 
 .level-content > h2 {
-    font-size: clamp(25px, 3vw, 50px);
+    font-size: clamp(20px, 3vw, 40px);
 }
 
 .level-content > p {
-    font-size: clamp(13px, 2vw, 22px);
+    font-size: clamp(10px, 2vw, 15px);
 }
 
 /* ========== BACKGROUND ========== */
-
-.bg-svg-stories {
-    position: absolute;
-    inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
-    z-index: -1;              /* behind everything */
-    pointer-events: none;     /* doesn't block clicks */
-
-
-    transform: translate(-23%, 55%) rotate(25deg);
-    width: 120vw;
-}
