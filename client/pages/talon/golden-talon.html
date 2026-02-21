@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Golden Talon Journey</title>
     <link rel="stylesheet" href="/styles.css">
     <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
     <script src="/main.js" defer></script>
+    <script src="golden-talon-journey.js" defer></script>
     
 </head>
-<body>
+<body class="golden-talon-page">
     <div class="background"></div>
 
     <div id="header"></div>
@@ -22,28 +23,60 @@
     </div>
 
     <div class="golden-talon-challenges">
-        
-        <div class="challenges">
-            <div class="challenge" data-storyline="talon" data-challenge="1">
-                <p>Challenge 1</p>
+        <div class="golden-talon-journey" id="goldenTalonJourney">
+            <svg class="journey-svg" id="journeySvg" aria-hidden="true" preserveAspectRatio="none">
+                <path id="journeyPathBase" class="journey-path-base"></path>
+                <path id="journeyPathTrail" class="journey-path-trail"></path>
+                <g id="journeyNodes" class="journey-nodes"></g>
+            </svg>
+
+            <div class="journey-orb" id="journeyOrb" aria-hidden="true">
+                <span class="journey-orb-core"></span>
             </div>
-            <div class="challenge" data-storyline="talon" data-challenge="2">
-                <p>Challenge 2</p>
+
+            <div class="challenge-list" id="challengeList">
+                <article class="ctf-card challenge left" data-storyline="talon" data-challenge="1" data-index="0" tabindex="0">
+                    <h3>Challenge 1</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="talon" data-challenge="2" data-index="1" tabindex="0">
+                    <h3>Challenge 2</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="talon" data-challenge="3" data-index="2" tabindex="0">
+                    <h3>Challenge 3</h3>
+                    <p class="meta"><span>Medium</span><span>Web</span></p>
+                    <p class="card-desc">Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="talon" data-challenge="4" data-index="3" tabindex="0">
+                    <h3>Challenge 4</h3>
+                    <p class="meta"><span>Medium</span><span>Misc</span></p>
+                    <p class="card-desc">Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="talon" data-challenge="5" data-index="4" tabindex="0">
+                    <h3>Challenge 5</h3>
+                    <p class="meta"><span>Hard</span><span>Pwn</span></p>
+                    <p class="card-desc">Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="talon" data-challenge="6" data-index="5" tabindex="0">
+                    <h3>Challenge 6</h3>
+                    <p class="meta"><span>Hard</span><span>Crypto</span></p>
+                    <p class="card-desc">Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                </article>
+                <article class="ctf-card left" data-index="6" tabindex="0">
+                    <h3>Coming Soon</h3>
+                    <p class="meta"><span>Expert</span><span>Mixed</span></p>
+                    <p class="card-desc">Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+                </article>
+                <article class="ctf-card right" data-index="7" tabindex="0">
+                    <h3>Coming Soon</h3>
+                    <p class="meta"><span>Expert</span><span>Reverse</span></p>
+                    <p class="card-desc">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque, auctor sit amet aliquam vel.</p>
+                </article>
             </div>
-            <div class="challenge" data-storyline="talon" data-challenge="3">
-                <p>Challenge 3</p>
-            </div>
-            <div class="challenge" data-storyline="talon" data-challenge="4">
-                <p>Challenge 4</p>
-            </div>
-            <div class="challenge" data-storyline="talon" data-challenge="5">
-                <p>Challenge 5</p>
-            </div>
-            <div class="challenge" data-storyline="talon" data-challenge="6">
-                <p>Challenge 6</p>
-            </div>            
         </div>
- 
     </div>
 <footer id="footer"></footer>
 </body>

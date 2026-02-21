@@ -1,75 +1,211 @@
 /* ========== TITLE ========== */
 
-.golden-talon-introduction > p {
+.golden-talon-page .golden-talon-introduction > p {
     padding-top: 5vh;
-    padding-bottom: 10vh;
+    padding-bottom: 7vh;
+    max-width: 70ch;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
 }
 
-.golden-talon-introduction > h1 {
+.golden-talon-page .golden-talon-introduction > h1 {
     font-size: clamp(30px, 4vw, 70px);
+    color: #f4ca64;
+    letter-spacing: 0.04em;
 }
 
 
 /* ========== CHALLENGES ========== */
 
-.golden-talon-challenges {
-    display: grid;
-    padding-bottom: 15vh !important;
+.golden-talon-page .golden-talon-challenges {
+    padding-bottom: 12vh !important;
 }
 
-.challenges {
-    grid-row: 1 / 2;
-    display: grid;
+.golden-talon-page .golden-talon-journey {
     position: relative;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+    min-height: 200px;
+    padding: 40px 0;
 }
 
-.challenge {
-    background: #181818;
-    color: #ddd;
-    width: 300px;
-    padding: 50px;
-    justify-self: center;
-    border-radius: 4px;
-    text-align: center;
+.golden-talon-page .challenge-list {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 20px 0;
+}
+
+.golden-talon-page .ctf-card {
+    width: min(460px, 42vw);
+    background: linear-gradient(165deg, #1a1a1a 0%, #131313 55%, #0f0f0f 100%);
+    border: 1px solid rgba(212, 170, 63, 0.55);
+    border-radius: 12px;
+    padding: 18px 20px;
+    color: #f4f4f4;
+    text-align: left;
     cursor: pointer;
-    border: 3px solid gold;
-    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    box-sizing: border-box;
+    transition: border-color 0.24s ease, box-shadow 0.24s ease, transform 0.2s ease;
+    outline: none;
 }
 
-.challenge:hover {
-    background: #202020;
-    border-color: rgba(255, 215, 0, 0.6);
-    transform: translateY(-2px);
+.golden-talon-page .ctf-card.left {
+    margin-right: auto;
 }
 
-.challenge.solved {
-    background: #202020;
-    color: #ddd;
-    width: 300px;
-    justify-self: center;
-    padding: 5vh;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-    border-color: rgb(77, 77, 0);
-    opacity: 0;
+.golden-talon-page .ctf-card.right {
+    margin-left: auto;
 }
 
-.challenge.solved > p {
-    opacity: 0;
+.golden-talon-page .ctf-card h3 {
+    font-size: clamp(14px, 1.2vw, 18px);
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
 }
 
-.challenge-link {
-    display: inline-block;
-    background: lightgray;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px 0;
-    transition: background-color 0.3s ease;
+.golden-talon-page .ctf-card .meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-/* ========== BACKGROUND ========== */
+.golden-talon-page .ctf-card .meta span {
+    font-size: clamp(11px, 0.82vw, 12px);
+    color: #d4aa3f;
+    border: 1px solid rgba(212, 170, 63, 0.45);
+    border-radius: 999px;
+    padding: 4px 10px;
+    letter-spacing: 0.05em;
+}
+
+.golden-talon-page .ctf-card .card-desc {
+    margin-top: 12px;
+    font-size: clamp(12px, 0.9vw, 14px);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+.golden-talon-page .ctf-card:hover,
+.golden-talon-page .ctf-card:focus-visible {
+    border-color: rgba(246, 201, 87, 0.92);
+    box-shadow: 0 0 16px rgba(229, 186, 74, 0.28);
+    transform: translateY(-3px);
+}
+
+.golden-talon-page .ctf-card.is-focused {
+    border-color: rgba(249, 210, 102, 0.96);
+    box-shadow: 0 0 18px rgba(241, 197, 85, 0.26);
+}
+
+.golden-talon-page .journey-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.golden-talon-page .journey-path-base,
+.golden-talon-page .journey-path-trail {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.golden-talon-page .journey-path-base {
+    stroke: rgba(212, 170, 63, 0.22);
+    stroke-width: 5;
+}
+
+.golden-talon-page .journey-path-trail {
+    stroke: rgba(249, 205, 92, 0.84);
+    stroke-width: 5;
+    filter: drop-shadow(0 0 4px rgba(245, 204, 98, 0.55));
+    stroke-dasharray: 0 10000;
+    stroke-dashoffset: 0;
+}
+
+.golden-talon-page .journey-node {
+    fill: rgba(212, 170, 63, 0.65);
+    stroke: rgba(249, 205, 92, 0.9);
+    stroke-width: 1.5;
+}
+
+.golden-talon-page .journey-orb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    margin-left: -9px;
+    margin-top: -9px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ffe8ab 0%, #f7c95a 45%, #d09a2e 100%);
+    box-shadow: 0 0 8px rgba(251, 216, 114, 0.9), 0 0 20px rgba(216, 162, 49, 0.75);
+    z-index: 4;
+    pointer-events: none;
+}
+
+.golden-talon-page .journey-orb::after {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 1px solid rgba(248, 206, 95, 0.35);
+}
+
+.golden-talon-page .journey-orb-core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    margin-top: -3px;
+    border-radius: 50%;
+    background: #fff8de;
+}
+
+.golden-talon-page .journey-orb.is-pulsing::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 223, 138, 0.8);
+    animation: talonRipple 0.8s ease-out;
+}
+
+@keyframes talonRipple {
+    0% {
+        transform: scale(0.65);
+        opacity: 0.95;
+    }
+    100% {
+        transform: scale(1.95);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 860px) {
+    .golden-talon-page .challenge-list {
+        gap: 50px;
+    }
+
+    .golden-talon-page .ctf-card,
+    .golden-talon-page .ctf-card.left,
+    .golden-talon-page .ctf-card.right {
+        width: min(470px, 86vw);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .golden-talon-page .journey-path-base,
+    .golden-talon-page .journey-path-trail {
+        stroke-width: 3;
+    }
+}
