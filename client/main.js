@@ -356,7 +356,7 @@ for row in x:
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button onclick="runCode()">Run Code</button>`;
+    <button class="btn" onclick="runCode()">Run Code</button>`;
 }
 
 
@@ -395,7 +395,7 @@ print(flag_part1 + flag_part2 + flag_part3 + str(???) + flag_part4 + str(???) + 
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button onclick="runCode()">Run Code</button>
+    <button class="btn" onclick="runCode()">Run Code</button>
     <p><em>Hint: Replace all ??? with the correct variable names or calculations. Don't forget str() to convert numbers to strings!</em></p>`;
 }
 // Python execution functionality

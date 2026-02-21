@@ -116,6 +116,7 @@ h1, h2, h3, p {
     text-decoration: none;
     color: white;
     background-color: black;
+    font-family: 'Lexend', 'Segoe UI', sans-serif;
 }
 
 .dropdown-btn {
@@ -136,6 +137,7 @@ h1, h2, h3, p {
     gap: 1vh;
 }
 
+
 .popup {
     display: none;
     position: fixed;
@@ -150,9 +152,9 @@ h1, h2, h3, p {
 
     min-width: 30vw;
     background: #1D1D1D;
-    padding: 15px;
+    padding: 30px;
     border-radius: 8px;
-    width: 70%;
+    width: 100%;
     position: relative;
     font-size: clamp(10px, 1vw, 16px);
 }
@@ -181,6 +183,8 @@ textarea {
     height: 50vh;
     font-family: monospace;
     font-size: clamp(10px, 1vw, 16px);
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 pre {
     margin: 0;
@@ -192,6 +196,7 @@ pre {
     text-align: start;
     border: 1px solid #ccc;
     white-space: pre-wrap;
+    border-radius: 5px;
 }
 
 /* ========== FOOTER ========== */

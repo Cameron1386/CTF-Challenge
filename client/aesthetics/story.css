@@ -2,7 +2,7 @@
 
 .introduction > h1 {
     font-size: clamp(30px, 4vw, 60px);
-    padding: 1vw;
+    padding: 3vw;
 }
 
 .levels {
@@ -11,13 +11,16 @@
 }
 
 .level {
-    background: #333333;
-    padding: 20px;
-    border-radius: 4px;
-    text-align: center;
+    background: linear-gradient(165deg, #1a1a1a 0%, #131313 55%, #0f0f0f 100%);
+    border-radius: 12px;
+    padding: 22px 26px;
+    color: #f4f4f4;
     display: flex;
     justify-content: space-between;
     text-align: left;
+    box-sizing: border-box;
+    transition: border-color 0.24s ease, box-shadow 0.24s ease, transform 0.2s ease;
+    outline: none;
 }
 
 .outer-level {
@@ -26,7 +29,7 @@
 }
 
 #golden-talon {
-    border: 2px solid gold;
+    border: 1px solid gold;
     position: relative;
 }
 
@@ -64,7 +67,7 @@
 }
 
 .level-content > h2 {
-    font-size: clamp(20px, 3vw, 40px);
+    font-size: clamp(20px, 3vw, 30px);
 }
 
 .level-content > p {

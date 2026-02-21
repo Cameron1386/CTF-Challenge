@@ -22,23 +22,15 @@
     padding-bottom: 12vh !important;
 }
 
-.golden-talon-page .golden-talon-journey {
-    position: relative;
-    min-height: 200px;
-    padding: 40px 0;
-}
 
 .golden-talon-page .challenge-list {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 80px;
     padding: 20px 0;
 }
 
 .golden-talon-page .ctf-card {
-    width: min(460px, 42vw);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     background: linear-gradient(165deg, #1a1a1a 0%, #131313 55%, #0f0f0f 100%);
     border: 1px solid rgba(212, 170, 63, 0.55);
     border-radius: 12px;
@@ -51,13 +43,6 @@
     outline: none;
 }
 
-.golden-talon-page .ctf-card.left {
-    margin-right: auto;
-}
-
-.golden-talon-page .ctf-card.right {
-    margin-left: auto;
-}
 
 .golden-talon-page .ctf-card h3 {
     font-size: clamp(14px, 1.2vw, 18px);
@@ -95,101 +80,28 @@
     transform: translateY(-3px);
 }
 
-.golden-talon-page .ctf-card.is-focused {
-    border-color: rgba(249, 210, 102, 0.96);
-    box-shadow: 0 0 18px rgba(241, 197, 85, 0.26);
+.golden-talon-page .ctf-card.solved .meta span,
+.golden-talon-page .ctf-card.solved > *{
+    border-color: rgba(77, 63, 26, 0.92);
+    color: #636262;
 }
 
-.golden-talon-page .journey-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: visible;
-    pointer-events: none;
+.golden-talon-page .ctf-card.solved {
+    border-color: rgba(65, 53, 22, 0.92);
 }
 
-.golden-talon-page .journey-path-base,
-.golden-talon-page .journey-path-trail {
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.challenge-link {
+    display: inline-block;
+    background: lightgray;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
 }
 
-.golden-talon-page .journey-path-base {
-    stroke: rgba(212, 170, 63, 0.22);
-    stroke-width: 5;
-}
 
-.golden-talon-page .journey-path-trail {
-    stroke: rgba(249, 205, 92, 0.84);
-    stroke-width: 5;
-    filter: drop-shadow(0 0 4px rgba(245, 204, 98, 0.55));
-    stroke-dasharray: 0 10000;
-    stroke-dashoffset: 0;
-}
-
-.golden-talon-page .journey-node {
-    fill: rgba(212, 170, 63, 0.65);
-    stroke: rgba(249, 205, 92, 0.9);
-    stroke-width: 1.5;
-}
-
-.golden-talon-page .journey-orb {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    margin-left: -9px;
-    margin-top: -9px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #ffe8ab 0%, #f7c95a 45%, #d09a2e 100%);
-    box-shadow: 0 0 8px rgba(251, 216, 114, 0.9), 0 0 20px rgba(216, 162, 49, 0.75);
-    z-index: 4;
-    pointer-events: none;
-}
-
-.golden-talon-page .journey-orb::after {
-    content: "";
-    position: absolute;
-    inset: -12px;
-    border-radius: 50%;
-    border: 1px solid rgba(248, 206, 95, 0.35);
-}
-
-.golden-talon-page .journey-orb-core {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 6px;
-    height: 6px;
-    margin-left: -3px;
-    margin-top: -3px;
-    border-radius: 50%;
-    background: #fff8de;
-}
-
-.golden-talon-page .journey-orb.is-pulsing::before {
-    content: "";
-    position: absolute;
-    inset: -6px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 223, 138, 0.8);
-    animation: talonRipple 0.8s ease-out;
-}
-
-@keyframes talonRipple {
-    0% {
-        transform: scale(0.65);
-        opacity: 0.95;
-    }
-    100% {
-        transform: scale(1.95);
-        opacity: 0;
-    }
-}
 
 @media (max-width: 860px) {
     .golden-talon-page .challenge-list {
