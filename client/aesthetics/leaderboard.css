@@ -1,6 +1,9 @@
-body {
+.leaderboard-body {
     background-color: #0f0f0f; 
     color: #ffffff;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 .leaderboard-container {

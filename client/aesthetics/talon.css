@@ -45,15 +45,20 @@
 }
 
 .challenge.solved {
-    background: #161616;
-    color: white;
-    width: 30vw;
+    background: #202020;
+    color: #ddd;
+    width: 300px;
     justify-self: center;
     padding: 5vh;
     border-radius: 4px;
     text-align: center;
     cursor: pointer;
-    border: 3px solid #6A9E01;
+    border-color: rgb(77, 77, 0);
+    opacity: 0;
+}
+
+.challenge.solved > p {
+    opacity: 0;
 }
 
 .challenge-link {
