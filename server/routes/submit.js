@@ -35,7 +35,7 @@ router.post("/submit", auth, async (req, res) => {
 
     // 5️⃣ Update score and solved flags
     user.solvedFlags.push(challenge);
-    user.score += 100; // you can change this to different point values per flag
+    user.score += flag.points; // you can change this to different point values per flag
     await user.save();
 
     // 6️⃣ Send response including updated score
