@@ -10,7 +10,7 @@
 
 .hero-content > h1 {
     font-size: clamp(30px, 4vw, 70px);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .hero-content > .btn {
@@ -36,6 +36,7 @@
 .description > h2 {
         font-size: clamp(20px, 4vw, 50px);
         padding: 40px;
+        font-weight: 400;
 }
 
 /*

@@ -1,0 +1,147 @@
+/* ========== TITLE ========== */
+
+.kharza-page .kharza-introduction > p {
+    padding-top: 5vh;
+    padding-bottom: 7vh;
+    max-width: 70ch;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+}
+
+.kharza-page .kharza-introduction > h1 {
+    font-size: clamp(30px, 4vw, 70px);
+    color: #f47a64;
+    letter-spacing: 0.04em;
+}
+
+
+/* ========== CHALLENGES ========== */
+
+
+
+.challenge-list,
+.l1, .l2, .l3, .l4 {
+    display: none;
+}
+
+.kharza-page .kharza-challenges {
+    padding-bottom: 12vh !important;
+}
+
+
+.challenge-list, 
+.l1.active, .l2.active, .l3.active, .l4.active{
+    display: grid;
+    gap: 80px;
+    padding: 20px 0;
+}
+
+.kharza-page .ctf-card {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    background: linear-gradient(165deg, #1a1a1a 0%, #131313 55%, #0f0f0f 100%);
+    border: 1px solid #f47a64;
+    border-radius: 12px;
+    padding: 18px 20px;
+    color: #f4f4f4;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.24s ease, box-shadow 0.24s ease, transform 0.2s ease;
+    outline: none;
+}
+
+
+.kharza-page .ctf-card h3 {
+    font-size: clamp(14px, 1.2vw, 18px);
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+}
+
+.kharza-page .ctf-card .meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.kharza-page .ctf-card .meta span {
+    font-size: clamp(11px, 0.82vw, 12px);
+    color: #f47a64;
+    border: 1px solid rgba(211, 50, 44, 0.45);
+    border-radius: 999px;
+    padding: 4px 10px;
+    letter-spacing: 0.05em;
+}
+
+.kharza-page .ctf-card .card-desc {
+    margin-top: 12px;
+    font-size: clamp(12px, 0.9vw, 14px);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+.kharza-page .ctf-card:hover,
+.kharza-page .ctf-card:focus-visible {
+    border-color: rgba(247, 82, 53, 0.92);
+    box-shadow: 0 0 16px rgba(211, 50, 44, 0.45);
+    transform: translateY(-3px);
+}
+
+.kharza-page .ctf-card.solved .meta span,
+.kharza-page .ctf-card.solved > *{
+    border-color: rgba(59, 21, 19, 0.92);
+    color: #636262;
+}
+
+.kharza-page .ctf-card.solved {
+    border-color: rgba(59, 21, 19, 0.92);
+}
+
+.challenge-link {
+    display: inline-block;
+    background: lightgray;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.section-selection {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.section-selection button{
+    all: unset;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #e26c57;
+    background: linear-gradient(165deg, #1a1a1a 0%, #131313 70%, #3d1c1c 100%);
+    color: white;
+    padding: 15px;
+}
+
+
+@media (max-width: 860px) {
+    .kharza-page .challenge-list {
+        gap: 50px;
+    }
+
+    .kharza-page .ctf-card,
+    .kharza-page .ctf-card.left,
+    .kharza-page .ctf-card.right {
+        width: min(470px, 86vw);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

@@ -3,6 +3,7 @@
 .introduction > h1 {
     font-size: clamp(30px, 4vw, 60px);
     padding: 3vw;
+    font-weight: 500;
 }
 
 .levels {
@@ -62,16 +63,26 @@
     color: black;
 }
 
+#kharza > .btn {
+    background-color: #f47a64;  
+}
+
+#kharza {
+    border: 1px solid #f47a64;
+}
+
 .level-content {
     max-width: 35vw;
 }
 
 .level-content > h2 {
     font-size: clamp(20px, 3vw, 30px);
+    font-weight: 400;
 }
 
 .level-content > p {
     font-size: clamp(10px, 2vw, 15px);
+    font-weight: 300;
 }
 
 /* ========== BACKGROUND ========== */

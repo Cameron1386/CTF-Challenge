@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Talon Journey</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="/main.js" defer></script>
+    
+</head>
+<body class="kharza-page">
+    <div class="background"></div>
+
+    <div id="header"></div>
+
+    <div class="kharza-introduction">
+        <h1>The Kharza</h1>
+        <p>The Kharza are a dangerous, organized cybercrime syndicate. Unlike the Golden Talon, they’re disciplined and secretive. Defeating them requires deeper investigation.</p>
+    </div>
+
+    <div class="section-selection">
+        <div class="buttons">
+            <button class="btn" data-level="l1">L1</button>
+            <button class="btn" data-level="l2">L2</button>
+            <button class="btn" data-level="l3">L3</button>
+            <button class="btn" data-level="l4">L4</button>
+        </div>
+    </div>
+
+    <div class="kharza-challenges">
+
+            <div class="l1" class="challenge-list" id="challengeList">
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="1" data-index="0" tabindex="0">
+                    <h3>Challenge 1</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="2" data-index="1" tabindex="0">
+                    <h3>Challenge 2</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="3" data-index="2" tabindex="0">
+                    <h3>Challenge 3</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="4" data-index="3" tabindex="0">
+                    <h3>Challenge 4</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="5" data-index="4" tabindex="0">
+                    <h3>Challenge 5</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+                </article>
+            </div>
+
+
+
+            <div class="l2" class="challenge-list" id="challengeList">
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="6" data-index="5" tabindex="0">
+                    <h3>Challenge 6</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="7" data-index="6" tabindex="0">
+                    <h3>Challenge 7</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="8" data-index="7" tabindex="0">
+                    <h3>Challenge 8</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="9" data-index="8" tabindex="0">
+                    <h3>Challenge 9</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="10" data-index="9" tabindex="0">
+                    <h3>Challenge 10</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+                </article>
+            </div>
+
+
+
+
+            <div class="l3" class="challenge-list" id="challengeList">
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="11" data-index="10" tabindex="0">
+                    <h3>Challenge 11</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="12" data-index="11" tabindex="0">
+                    <h3>Challenge 12</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="13" data-index="12" tabindex="0">
+                    <h3>Challenge 13</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="14" data-index="13" tabindex="0">
+                    <h3>Challenge 14</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="15" data-index="14" tabindex="0">
+                    <h3>Challenge 15</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+                </article>
+            </div>
+
+
+            <div class="l4" class="challenge-list" id="challengeList">
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="16" data-index="15" tabindex="0">
+                    <h3>Challenge 16</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="17" data-index="16" tabindex="0">
+                    <h3>Challenge 17</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="18" data-index="17" tabindex="0">
+                    <h3>Challenge 18</h3>
+                    <p class="meta"><span>Easy</span><span>Web</span></p>
+                    <p class="card-desc">Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                </article>
+                <article class="ctf-card challenge right" data-storyline="kharza" data-challenge="19" data-index="18" tabindex="0">
+                    <h3>Challenge 19</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                </article>
+                <article class="ctf-card challenge left" data-storyline="kharza" data-challenge="20" data-index="19" tabindex="0">
+                    <h3>Challenge 20</h3>
+                    <p class="meta"><span>Easy</span><span>Coding</span></p>
+                    <p class="card-desc">Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+                </article>
+            </div>
+    </div>
+<footer id="footer"></footer>
+</body>
+</html>
