@@ -544,63 +544,147 @@ function getChallenge2_5Content() {
 }
 
 function getChallenge2_6Content() {
-    return ``;
+    return `
+        <h1>Challenge 6: Rookie Mistake</h1>
+        <p>An attacker tried to hide their message using one of the oldest ciphers in the book.</p>
+        <p>Fortunately for you, this encryption method simply rotates letters in the alphabet.</p>
+        <p>Decode the message using ROT13 to reveal the flag.</p>
+        <p>XUNEMN{fuvsgvat_gur_yrggref_nebhaq}</p>`;
 }
 
 function getChallenge2_7Content() {
-    return ``;
+    return `
+        <h1>Challenge 7: Numbers Everywhere</h1>
+        <p>The message you intercepted is filled with strange numbers and letters.</p>
+        <p>It looks like the data was encoded multiple times.</p>
+        <p>Start by decoding the hexadecimal data, then see what format the result is in.</p>
+        <p>Continue decoding until you uncover the flag.</p>
+        <p>53 30 68 42 55 6c 70 42 65 32 68 6c 65 46 39 42 54 6b 52 66 59 6d 46 7a 5a 54 59 30 58 32 46 73 62 46 39 70 62 6c 39 76 62 6d 56 39</p>`;
 }
 
 function getChallenge2_8Content() {
-    return ``;
+    return `
+        <h1>Challenge 8: Hidden Key</h1>
+        <p>A secret message was encrypted using the Vigenère cipher.</p>
+        <p>However, the key wasn’t included with the message. Instead, the sender mentioned it in a forum post linked nearby.</p>
+        <p>The post references a dog that holds the key to decrypting the message.</p>
+        <p>Find the key and decrypt the message to retrieve the flag.</p>
+        <p>LLLCZB{qlyy_qizalf_ydp_tiitc_dpk_ld_a_qeddwpvo}</p>`;
 }
 
 function getChallenge2_9Content() {
-    return ``;
+    return `
+        <h1>Challenge 9: Emails</h1>
+        <p>You intercepted a suspicious email exchange between two users.</p>
+        <p>The message content appears to be encoded, but the attacker layered their encryption.</p>
+        <p>First decode the Base64 content, then see if the resulting message still looks encrypted.</p>
+        <p>Continue decoding until the flag is revealed.</p>
+        <a href="/assets/emails.txt" download>emails.txt</a>`;
 }
 
 function getChallenge2_10Content() {
-    return ``;
+    return `
+        <h1>Challenge 10: Password Checking</h1>
+        <p>You’ve obtained a hashed password from a compromised database.</p>
+        <p>The system used MD5 hashing, but the password appears weak.</p>
+        <p>Use any hash cracking tools or websites to recover the original password and reveal the flag.</p>
+        <p>Note: This challenge does not have the KHARZA part of the flag and need to be added, the format is KHARZA{<hashed password>}</p>
+        <p>ab5b9caeb7af93eef366b66ec4f63194</p>`;
 }
 
 function getChallenge2_11Content() {
-    return ``;
+    return `
+        <h1>Challenge 11: The Hidden Cookie</h1>
+        <p>Sometimes websites store important information in places users rarely look.</p>
+        <p>Load the webpage and inspect the cookies stored by the browser.</p>
+        <p>One of them contains something interesting.</p>
+        <p>Be quick though — it might disappear when you leave the page.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_12Content() {
-    return ``;
+    return `
+        <h1>Challenge 12: Robots.txt Discovery</h1>
+        <p>Websites sometimes tell search engines what not to index.</p>
+        <p>Check the website’s robots.txt file to see what paths are hidden from search engines.</p>
+        <p>One of those paths might lead directly to the flag.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_13Content() {
-    return ``;
+    return `
+        <h1>Challenge 13: Background URL</h1>
+        <p>The webpage looks ordinary, but something might be hiding behind the scenes.</p>
+        <p>Inspect the page’s CSS files, especially the styles used for background images.</p>
+        <p>A hidden URL inside the CSS might lead you to a secret page containing the flag.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_14Content() {
-    return ``;
+    return `
+        <h1>Challenge 14: Suspicious Image</h1>
+        <p>You found an image that seems harmless, but something about it feels suspicious.</p>
+        <p>Investigate the image’s metadata using online tools.</p>
+        <p>Hidden inside the file’s metadata is the flag.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_15Content() {
-    return ``;
+    return `
+        <h1>Challenge 15: URL Guessing</h1>
+        <p>You’ve found a website that loads random pieces of content each time you refresh the page.</p>
+        <p>Look closely at the URL structure — the content appears to be controlled by an ID number.</p>
+        <p>The flag isn’t part of the normal rotation, but it might be hiding just outside the expected range.</p>
+        <p>Try exploring nearby IDs to uncover it.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_16Content() {
-    return ``;
+    return `
+        <h1>Challenge 16: The Suspicious ZIP</h1>
+        <p>You downloaded a ZIP archive from a suspicious source.</p>
+        <p>Extract the archive and explore the folder structure carefully.</p>
+        <p>Somewhere inside the files is a flag.txt containing the flag.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_17Content() {
-    return ``;
+    return `
+        <h1>Challenge 17: Corrupted Image</h1>
+        <p>You received a file that refuses to open properly.</p>
+        <p>It looks like an image, but something about the file extension seems wrong.</p>
+        <p>Try changing the file extension to the correct format and open it again to reveal the flag.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_18Content() {
-    return ``;
+    return `
+        <h1>Challenge 18: The Log File</h1>
+        <p>A server log was recovered, but the contents appear scrambled.</p>
+        <p>Start by decoding the Base64 data to reveal the actual logs.</p>
+        <p>Inside the logs is a reference to a hidden file path that can be appended to the website’s URL.</p>
+        <p>Follow that path to retrieve the flag.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_19Content() {
-    return ``;
+    return `
+        <h1>Challenge 19: Steganography Lite</h1>
+        <p>This image looks completely normal at first glance.</p>
+        <p>However, sometimes secrets are hidden in plain sight.</p>
+        <p>Look carefully at the image — zoom in or inspect closely.</p>
+        <p>The flag is hidden directly on the image itself.</p>
+        <p>link something</p>`;
 }
 
 function getChallenge2_20Content() {
-    return ``;
+    return `
+        <h1>Challenge 20: File Signature</h1>
+        <p>You’ve recovered a file that refuses to open.</p>
+        <p>It may have been tampered with at the binary level.</p>
+        <p>Inspect the magic bytes (file signature) at the beginning of the file.</p>
+        <p>Correcting the file signature should allow the file to open and reveal the flag.</p>
+        <p>link something</p>`;
 }
 // Python execution functionality
 let pyodideReadyPromise = null;
