@@ -307,26 +307,26 @@ function getPopupContent(storyline, challengeNumber) {
         }
     } else if (storyline === 'kharza') {
         switch (challengeNumber) {
-            case 7:  return 1;
-            case 8:  return 2;
-            case 9:  return 3;
-            case 10:  return 4;
-            case 11:  return 5;
-            case 12:  return 6;
-            case 13:  return 7;
-            case 14:  return 8;
-            case 15:  return 9;
-            case 16: return 10;
-            case 17: return 11;
-            case 18: return 12;
-            case 19: return 13;
-            case 20: return 14;
-            case 21: return 15;
-            case 22: return 16;
-            case 23: return 17;
-            case 24: return 18;
-            case 25: return 19;
-            case 26: return 20;
+            case 7:  return getChallenge2_1Content();
+            case 8:  return getChallenge2_2Content();
+            case 9:  return getChallenge2_3Content();
+            case 10:  return getChallenge2_4Content();
+            case 11:  return getChallenge2_5Content();
+            case 12:  return getChallenge2_6Content();
+            case 13:  return getChallenge2_7Content();
+            case 14:  return getChallenge2_8Content();
+            case 15:  return getChallenge2_9Content();
+            case 16: return getChallenge2_10Content();
+            case 17: return getChallenge2_11Content();
+            case 18: return getChallenge2_12Content();
+            case 19: return getChallenge2_13Content();
+            case 20: return getChallenge2_14Content();
+            case 21: return getChallenge2_15Content();
+            case 22: return getChallenge2_16Content();
+            case 23: return getChallenge2_17Content();
+            case 24: return getChallenge2_18Content();
+            case 25: return getChallenge2_19Content();
+            case 26: return getChallenge2_20Content();
             default:
                 return '<h1>Challenge Not Found</h1>';
         }
@@ -475,6 +475,132 @@ print(flag_part1 + flag_part2 + flag_part3 + str(???) + flag_part4 + str(???) + 
     </div>
     <button class="btn" onclick="runCode()">Run Code</button>
     <p><em>Hint: Replace all ??? with the correct variable names or calculations. Don't forget str() to convert numbers to strings!</em></p>`;
+}
+
+function getChallenge2_1Content() {
+    return `
+        <h1>Challenge 1: Reverse the String</h1>
+        <p>The Kharza thought they could just reverse a string to hide it, reverse the string and get the flag</p>
+        <div class="terminal">
+        <textarea id="code" placeholder="Write your Python code here...">flag = "}ysae_si_gnisrever{AZRAHK"
+        </textarea>
+        <br><br>
+        <pre id="output"></pre>
+    </div>
+    <button class="btn" onclick="runCode()">Run Code</button>
+    <p><em>Hint:</em></p>`;
+}
+
+function getChallenge2_2Content() {
+    return `
+        <h1>Challenge 2: ASCII Puzzle</h1>
+        <p>Each number maps to a character, number or special character, see if you can see what they map to using code</p>
+        <div class="terminal">
+        <textarea id="code" placeholder="Write your Python code here...">arr = [75, 72, 65, 82, 90, 65, 123, 65, 83, 67, 73, 73, 95, 109, 97, 112, 115, 95, 101, 118, 101, 114, 121, 116, 104, 105, 110, 103, 95, 116, 111, 95, 97, 95, 110, 117, 109, 98, 101, 114, 125]</textarea>
+        <br><br>
+        <pre id="output"></pre>
+    </div>
+    <button class="btn" onclick="runCode()">Run Code</button>
+    <p><em>Hint:</em></p>`;
+}
+
+function getChallenge2_3Content() {
+    return `
+        <h1>Challenge 3: Index Puzzle</h1>
+        <p>The Kharza think they can hide the flag by putting 5 characters between each character of the flag, decode this for us</p>
+        <div class="terminal">
+        <textarea id="code" placeholder="Write your Python code here...">s = "Kx7#pLH9@tQ2A!m3ZkR0$d8WZp2&hYA^7qJ1{c4*Bnf5@rX0o8!aK3r#2Lp9_v6$Qel1%oRso9*Td4p!3Yk8s^5Wq1_m8@Zaa7#Jp0r2&Xc6e$4Qn9_h3!Lsv8%K1de@6Rp2r9*Zt4y#0Xq7_p3J8cu!2Wm5s^7aQ1e4%kT9f0@Lx3u#6Zr2l!5d8A}9$Kp1"</textarea>
+        <br><br>
+        <pre id="output"></pre>
+    </div>
+    <button class="btn" onclick="runCode()">Run Code</button>
+    <p><em>Hint:</em></p>`;
+}
+
+function getChallenge2_4Content() {
+    return `
+        <h1>Challenge 4: Scrambled String</h1>
+        <p>You are given a string of numbers. Each number represents an ASCII value, but all numbers have been increased by a hidden constant. Your task is to determine the constant and decode the original message.</p>
+        <div class="terminal">
+        <textarea id="code" placeholder="Write your Python code here...">arr = [78, 75, 68, 85, 93, 68, 126, 107, 108, 103, 103, 104, 113, 98, 108, 113, 102, 117, 104, 112, 104, 113, 119, 98, 108, 118, 98, 105, 120, 113, 128]</textarea>
+        <br><br>
+        <pre id="output"></pre>
+    </div>
+    <button class="btn" onclick="runCode()">Run Code</button>
+    <p><em>Hint:</em></p>`;
+}
+
+function getChallenge2_5Content() {
+    return `
+        <h1>Challenge 5: Multi-step</h1>
+        <p>You are given a large array of numbers. Some numbers are repeated consecutively. Remove all consecutive duplicates</p>
+        <div class="terminal">
+        <textarea id="code" placeholder="Write your Python code here...">arr = [75, 75, 72, 65, 65, 65, 65, 82, 90, 90, 65, 123, 123, 123, 100, 100, 117, 117, 117, 117, 112, 108, 108, 108, 105, 99, 97, 97, 116, 116, 116, 101, 115, 115, 95, 97, 114, 114, 101, 101, 95, 101, 118, 101, 114, 121, 121, 119, 104, 101, 114, 101, 33, 33, 125]</textarea>
+        <br><br>
+        <pre id="output"></pre>
+    </div>
+    <button class="btn" onclick="runCode()">Run Code</button>
+    <p><em>Hint:</em></p>`;
+}
+
+function getChallenge2_6Content() {
+    return ``;
+}
+
+function getChallenge2_7Content() {
+    return ``;
+}
+
+function getChallenge2_8Content() {
+    return ``;
+}
+
+function getChallenge2_9Content() {
+    return ``;
+}
+
+function getChallenge2_10Content() {
+    return ``;
+}
+
+function getChallenge2_11Content() {
+    return ``;
+}
+
+function getChallenge2_12Content() {
+    return ``;
+}
+
+function getChallenge2_13Content() {
+    return ``;
+}
+
+function getChallenge2_14Content() {
+    return ``;
+}
+
+function getChallenge2_15Content() {
+    return ``;
+}
+
+function getChallenge2_16Content() {
+    return ``;
+}
+
+function getChallenge2_17Content() {
+    return ``;
+}
+
+function getChallenge2_18Content() {
+    return ``;
+}
+
+function getChallenge2_19Content() {
+    return ``;
+}
+
+function getChallenge2_20Content() {
+    return ``;
 }
 // Python execution functionality
 let pyodideReadyPromise = null;
