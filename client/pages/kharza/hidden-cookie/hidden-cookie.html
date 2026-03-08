@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KHARZA Secure Portal</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#111;
+            color:white;
+            text-align:center;
+            margin-top:100px;
+        }
+
+        .box{
+            background:#222;
+            padding:30px;
+            width:400px;
+            margin:auto;
+            border-radius:10px;
+        }
+    </style>
+
+    <script>
+        function setFlagCookie(){
+            document.cookie = "session_token=KHARZA{cookies_are_not_so_hidden}; path=/";
+        }
+
+        function deleteFlagCookie(){
+            document.cookie = "session_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        window.onload = setFlagCookie;
+        window.onbeforeunload = deleteFlagCookie;
+    </script>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>KHARZA Login Portal</h1>
+    <p>Welcome agent.</p>
+    <p>Your session has been initialized.</p>
+</div>
+
+</body>
+</html>

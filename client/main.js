@@ -599,7 +599,7 @@ function getChallenge2_11Content() {
         <p>Load the webpage and inspect the cookies stored by the browser.</p>
         <p>One of them contains something interesting.</p>
         <p>Be quick though — it might disappear when you leave the page.</p>
-        <p>link something</p>`;
+        <a class="challenge-link" href="/pages/kharza/hidden-cookie/hidden-cookie.html" target="_blank">Login Forum</a>`;
 }
 
 function getChallenge2_12Content() {
@@ -608,16 +608,16 @@ function getChallenge2_12Content() {
         <p>Websites sometimes tell search engines what not to index.</p>
         <p>Check the website’s robots.txt file to see what paths are hidden from search engines.</p>
         <p>One of those paths might lead directly to the flag.</p>
-        <p>link something</p>`;
+        <a class="challenge-link" href="https://escape-room-fawn.vercel.app/" target="_blank">Suspicious Site</a>`;
 }
 
 function getChallenge2_13Content() {
     return `
         <h1>Challenge 13: Background URL</h1>
-        <p>The webpage looks ordinary, but something might be hiding behind the scenes.</p>
+        <p>Take another look at this website, something else might be hiding behind the scenes.</p>
         <p>Inspect the page’s CSS files, especially the styles used for background images.</p>
         <p>A hidden URL inside the CSS might lead you to a secret page containing the flag.</p>
-        <p>link something</p>`;
+        <a class="challenge-link" href="https://escape-room-fawn.vercel.app/" target="_blank">Suspicious Site</a>`;
 }
 
 function getChallenge2_14Content() {
@@ -626,7 +626,7 @@ function getChallenge2_14Content() {
         <p>You found an image that seems harmless, but something about it feels suspicious.</p>
         <p>Investigate the image’s metadata using online tools.</p>
         <p>Hidden inside the file’s metadata is the flag.</p>
-        <p>link something</p>`;
+        <a href="/assets/nothing_here.jpg" download>nothing_here.jpg</a>`;
 }
 
 function getChallenge2_15Content() {
@@ -636,7 +636,7 @@ function getChallenge2_15Content() {
         <p>Look closely at the URL structure — the content appears to be controlled by an ID number.</p>
         <p>The flag isn’t part of the normal rotation, but it might be hiding just outside the expected range.</p>
         <p>Try exploring nearby IDs to uncover it.</p>
-        <p>link something</p>`;
+        <a class="challenge-link" href="/pages/kharza/url-guessing/url-guessing.html" target="_blank">Random Article Generator</a>`;
 }
 
 function getChallenge2_16Content() {
@@ -645,7 +645,7 @@ function getChallenge2_16Content() {
         <p>You downloaded a ZIP archive from a suspicious source.</p>
         <p>Extract the archive and explore the folder structure carefully.</p>
         <p>Somewhere inside the files is a flag.txt containing the flag.</p>
-        <p>link something</p>`;
+        <a href="/assets/Suspicious_zip.zip" download>Suspicious Zip</a>`;
 }
 
 function getChallenge2_17Content() {
@@ -654,7 +654,7 @@ function getChallenge2_17Content() {
         <p>You received a file that refuses to open properly.</p>
         <p>It looks like an image, but something about the file extension seems wrong.</p>
         <p>Try changing the file extension to the correct format and open it again to reveal the flag.</p>
-        <p>link something</p>`;
+        <a href="/assets/corrupted.txt" download>Corrupted.txt</a>`;
 }
 
 function getChallenge2_18Content() {
@@ -664,7 +664,7 @@ function getChallenge2_18Content() {
         <p>Start by decoding the Base64 data to reveal the actual logs.</p>
         <p>Inside the logs is a reference to a hidden file path that can be appended to the website’s URL.</p>
         <p>Follow that path to retrieve the flag.</p>
-        <p>link something</p>`;
+        <a href="/assets/logs.b64" download>logs.b64</a>`;
 }
 
 function getChallenge2_19Content() {
@@ -674,7 +674,7 @@ function getChallenge2_19Content() {
         <p>However, sometimes secrets are hidden in plain sight.</p>
         <p>Look carefully at the image — zoom in or inspect closely.</p>
         <p>The flag is hidden directly on the image itself.</p>
-        <p>link something</p>`;
+        <a href="/assets/steg_lite.png" download>steg_lite.png</a>`;
 }
 
 function getChallenge2_20Content() {
@@ -684,7 +684,7 @@ function getChallenge2_20Content() {
         <p>It may have been tampered with at the binary level.</p>
         <p>Inspect the magic bytes (file signature) at the beginning of the file.</p>
         <p>Correcting the file signature should allow the file to open and reveal the flag.</p>
-        <p>link something</p>`;
+        <a href="/assets/magic.png" download>magic.png</a>`;
 }
 // Python execution functionality
 let pyodideReadyPromise = null;
