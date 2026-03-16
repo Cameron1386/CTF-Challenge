@@ -569,6 +569,7 @@ function getChallenge2_8Content() {
         <p>However, the key wasn’t included with the message. Instead, the sender mentioned it in a forum post linked nearby.</p>
         <p>The post references a dog that holds the key to decrypting the message.</p>
         <p>Find the key and decrypt the message to retrieve the flag.</p>
+    <a class="challenge-link" href="/pages/kharza/hiddenforum.html" target="_blank">View Forum Post</a>
         <p>LLLCZB{qlyy_qizalf_ydp_tiitc_dpk_ld_a_qeddwpvo}</p>`;
 }
 
