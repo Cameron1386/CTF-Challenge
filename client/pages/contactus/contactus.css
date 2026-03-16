@@ -5,6 +5,14 @@
     font-family: monospace;
 }
 
+#header {
+    font-family: 'Lexend', 'Segoe UI', sans-serif;
+}
+
+#footer {
+    font-family: 'Lexend', 'Segoe UI', sans-serif;
+}
+
 .contact-wrapper {
     max-width: 620px;
     margin: 0 auto;
