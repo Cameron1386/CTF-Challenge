@@ -20,19 +20,6 @@
             border-radius:10px;
         }
     </style>
-
-    <script>
-        function setFlagCookie(){
-            document.cookie = "session_token=KHARZA{cookies_are_not_so_hidden}; path=/";
-        }
-
-        function deleteFlagCookie(){
-            document.cookie = "session_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }
-
-        window.onload = setFlagCookie;
-        window.onbeforeunload = deleteFlagCookie;
-    </script>
 </head>
 
 <body>

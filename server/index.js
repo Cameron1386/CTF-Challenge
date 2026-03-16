@@ -13,6 +13,14 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+app.get('/pages/kharza/hidden-cookie/hidden-cookie.html', (req, res) => {
+  res.cookie('session_token', 'KHARZA{cookies_are_not_so_hidden}', {
+    path: '/'
+  });
+
+  res.sendFile(path.join(__dirname, '../client/pages/kharza/hidden-cookie/hidden-cookie.html'));
+});
+
 app.use(express.static(path.join(__dirname, '../client')));  // or wherever your files live
 
 // Handle talon-secret subdomain
