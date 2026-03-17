@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: [FRONTEND, "ctf-challenge-9ylr2wwl6-camerons-projects-fe218799.vercel.app"], // for testing only, allows any frontend to connect
+  origin: [FRONTEND, "https://ctf-challenge-9ylr2wwl6-camerons-projects-fe218799.vercel.app"], // for testing only, allows any frontend to connect
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -33,8 +33,10 @@ import authRoutes from "./routes/auth.js";
 app.use("/auth", authRoutes);
 
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 
@@ -46,5 +48,11 @@ app.get("/me", auth, async (req, res) => {
   res.json(user);
 });
 
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error(err));
 
 
