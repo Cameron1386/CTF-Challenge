@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: [FRONTEND, "https://ctf-challenge-9ylr2wwl6-camerons-projects-fe218799.vercel.app"], // for testing only, allows any frontend to connect
+  origin: ["https://ctf-challenge-nine.vercel.app", FRONTEND], // for testing only, allows any frontend to connect
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
