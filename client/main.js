@@ -1,5 +1,5 @@
 // CTF Challenge - Main JavaScript File
-const BACKEND = "http://localhost:3000"
+const BACKEND = "https://api.pandemonium-ctf.com"
 //const BACKEND = "https://overnervously-putrefiable-laure.ngrok-free.dev"
 // Load popup HTML and initialize
 fetch('/js-injection/popup.html')
