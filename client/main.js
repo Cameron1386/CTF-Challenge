@@ -2,6 +2,23 @@
 const BACKEND = "https://api.pandemonium-ctf.com"
 //const BACKEND = "https://overnervously-putrefiable-laure.ngrok-free.dev"
 // Load popup HTML and initialize
+
+async function fetchWithRetry(url, options = {}, retries = 3) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const res = await fetch(url, options);
+            if (res.status === 530 || res.status === 503) {
+                await new Promise(r => setTimeout(r, 2000));
+                continue;
+            }
+            return res;
+        } catch (err) {
+            if (i === retries - 1) throw err;
+            await new Promise(r => setTimeout(r, 2000));
+        }
+    }
+}
+
 fetch('/js-injection/popup.html')
     .then(res => res.text())
     .then(html => {
@@ -192,7 +209,7 @@ async function handleFlagSubmission(e) {
 
     try {
         // Send request to your backend submit route
-        const res = await fetch(BACKEND + '/api/submit', {
+        const res = await fetchWithRetry(BACKEND + '/api/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -750,7 +767,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
 
     try {
-      const res = await fetch(BACKEND + "/auth/login", { // note port 3000
+      const res = await fetchWithRetry(BACKEND + "/auth/login", { // note port 3000
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -798,7 +815,7 @@ async function showUsername() {
   }
 
   try {
-    const res = await fetch(BACKEND + "/me", {
+    const res = await fetchWithRetry(BACKEND + "/me", {
       headers: {
         "Authorization": "Bearer " + token
       }
@@ -849,7 +866,7 @@ async function loadLeaderboard() {
     if (!tbody) return;
 
     try {
-        const res = await fetch(BACKEND + "/leaderboard");
+        const res = await fetchWithRetry(BACKEND + "/leaderboard");
         const data = await res.json();
 
         if (!data.success) {
