@@ -46,16 +46,51 @@
   background-size: 24px 24px;
 }
 */
-.box {
-    background-color: white;
-    padding: 10vw;
-    border: 5px solid #ABFF04;
-    border-radius: 5px;
+.boxes {
+  display: flex;
+  gap: 28px;
+  padding: 12vh 6vw;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  overflow: visible; /* ← ensure scaled children aren't clipped */
 }
 
-.boxes {
-    padding: 15vh 0;
-    display: flex;
-    justify-content: space-evenly;
-    align-items:center;
+.box {
+  background: linear-gradient(165deg, #1a1a1a 0%, #131313 55%, #0f0f0f 100%);
+  border: 1px solid #ABFF04;
+  border-radius: 6px;
+  padding: 28px 24px;
+  color: #f4f4f4;;
+  width: 300px;
+  max-width: 90vw;
+  cursor: pointer;
+  isolation: isolate; /* ← add this */
+  box-shadow:
+    0 0 0 0 rgba(171, 255, 4, 0),
+    0 4px 16px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
 }
+
+.box:hover {
+  transform: scale(1.055) translateY(-3px);
+  border-color: #c8ff2e;
+  z-index: 10; /* ← add this so it pops above siblings */
+}
+.box h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.box p {
+  line-height: 1.65;
+  font-size: 0.92rem;
+  font-weight: 300;
+}
+

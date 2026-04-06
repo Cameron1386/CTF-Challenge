@@ -72,6 +72,9 @@ function initPopupLogic() {
             if (submitMessage) submitMessage.textContent = '';
 
             popup.style.display = 'flex';
+
+            const isIDE = [4, 5, 6, 7, 8, 9, 10].includes(challengeNumber);
+            document.querySelector('.popup-content').classList.toggle('ide-popup', isIDE);
         });
     });
 
@@ -144,6 +147,7 @@ function initLandingAnimations() {
             duration: 0.8,
             ease: 'power2.out',
             stagger: 0.15,
+            clearProps: 'scale', // ← add here
             scrollTrigger: {
                 trigger: '.boxes',
                 start: 'top 50%'
@@ -238,6 +242,7 @@ async function handleFlagSubmission(e) {
                 submitMessage.style.color = 'green';
             }
 
+            setTimeout(() => location.reload(), 1500);
 
         } else {
             if (submitMessage) {

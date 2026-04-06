@@ -98,17 +98,6 @@
     border-color: rgba(59, 21, 19, 0.92);
 }
 
-.challenge-link {
-    display: inline-block;
-    background: lightgray;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px 0;
-    transition: background-color 0.3s ease;
-}
-
 .section-selection {
     display: flex;
     justify-content: center;
