@@ -6,9 +6,9 @@
 // 4. Go to Account → copy your Public Key
 // Then replace the three placeholders below:
 
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // e.g. "abc123XYZ"
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_xxxxxx"
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xxxxxx"
+const EMAILJS_PUBLIC_KEY  = "Wkrmh-OXWXERgaubu";   // e.g. "abc123XYZ"
+const EMAILJS_SERVICE_ID  = "service_fo56u9n";   // e.g. "service_xxxxxx"
+const EMAILJS_TEMPLATE_ID = "template_ta58buj";  // e.g. "template_xxxxxx"
 
 // ─────────────────────────────────────────────────────────────────
 
