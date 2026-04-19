@@ -88,6 +88,52 @@
     transform: translateY(-3px);
 }
 
+#resources {
+    background: #0f0f0f;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 24px 26px;
+    cursor: default;
+}
+
+/* Title */
+#resources h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 1.4rem;
+}
+
+/* List styling */
+#resources .card-desc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#resources .card-desc li {
+    padding: 10px 0;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#resources .card-desc li:last-child {
+    border-bottom: none;
+}
+
+/* Links (no visited color change) */
+#resources a,
+#resources a:visited {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Hover effect */
+#resources a:hover {
+    color: #858fe9;
+    text-decoration: underline;
+}
+
 .kharza-page .ctf-card.solved .meta span,
 .kharza-page .ctf-card.solved > *{
     border-color: rgba(59, 21, 19, 0.92);
