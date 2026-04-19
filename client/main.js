@@ -73,7 +73,7 @@ function initPopupLogic() {
 
             popup.style.display = 'flex';
 
-            const isIDE = [4, 5, 6, 7, 8, 9, 10].includes(challengeNumber);
+            const isIDE = [4, 5, 6, 7, 8, 9, 10, 11].includes(challengeNumber);
             document.querySelector('.popup-content').classList.toggle('ide-popup', isIDE);
         });
     });
@@ -509,8 +509,7 @@ function getChallenge2_1Content() {
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button class="btn" onclick="runCode()">Run Code</button>
-    <p><em>Hint:</em></p>`;
+    <button class="btn" onclick="runCode()">Run Code</button>`;
 }
 
 function getChallenge2_2Content() {
@@ -522,8 +521,7 @@ function getChallenge2_2Content() {
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button class="btn" onclick="runCode()">Run Code</button>
-    <p><em>Hint:</em></p>`;
+    <button class="btn" onclick="runCode()">Run Code</button>`;
 }
 
 function getChallenge2_3Content() {
@@ -535,8 +533,7 @@ function getChallenge2_3Content() {
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button class="btn" onclick="runCode()">Run Code</button>
-    <p><em>Hint:</em></p>`;
+    <button class="btn" onclick="runCode()">Run Code</button>`;
 }
 
 function getChallenge2_4Content() {
@@ -548,8 +545,7 @@ function getChallenge2_4Content() {
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button class="btn" onclick="runCode()">Run Code</button>
-    <p><em>Hint:</em></p>`;
+    <button class="btn" onclick="runCode()">Run Code</button>`;
 }
 
 function getChallenge2_5Content() {
@@ -561,8 +557,7 @@ function getChallenge2_5Content() {
         <br><br>
         <pre id="output"></pre>
     </div>
-    <button class="btn" onclick="runCode()">Run Code</button>
-    <p><em>Hint:</em></p>`;
+    <button class="btn" onclick="runCode()">Run Code</button>`;
 }
 
 function getChallenge2_6Content() {
