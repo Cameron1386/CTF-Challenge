@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     // Find all users, sort by score descending
     const users = await User.find({})
       .sort({ score: -1 })
-      .limit(10) // top 10
+      .limit(20) // top 10
       .select("username score -_id"); // only send username & score
 
     res.json({ success: true, users });
