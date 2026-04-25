@@ -352,6 +352,12 @@ function getPopupContent(storyline, challengeNumber) {
             default:
                 return '<h1>Challenge Not Found</h1>';
         }
+    } else if (storyline === 'final') {
+        switch(challengeNumber) {
+            case 27: return getChallenge3_1Content();
+            case 28: return getChallenge3_2Content();
+            case 29: return getChallenge3_3Content();
+        }
     }
     return '<h1>Storyline Not Found</h1>';
 }
@@ -704,6 +710,35 @@ function getChallenge2_20Content() {
         <p>Correcting the file signature should allow the file to open and reveal the flag.</p>
         <a href="/assets/magic.png" download>magic.png</a>`;
 }
+
+function getChallenge3_1Content() {
+    return `<h1>The Breach</h1>
+<p>
+  You're a cybersecurity analyst at a high school whose online learning platform has just triggered a breach alert. You've been handed an <a href="/assets/auth.log" download>authentication log</a> and a <a href="/assets/access.log" download>file access log</a> from the night in question. Comb through them, identify the suspicious user, the IP address they used, and the file they deleted in the format of user, IP address, deleted file.
+
+</p>
+
+<p>ex: joe, 127.0.119.101, deleted_file.txt</p>`;
+
+}
+
+function getChallenge3_2Content() {
+    return `<h1>The Breach</h1>
+<p>
+  The attackers are embedding encrypted messages within the network traffic. You've intercepted a <a href="/assets/key.txt" download>transmission</a> containing the AES key and IV hidden inside — decode them, and submit what the key, and IV are in the following format.
+</p>
+<p>ex: this_is_the_key, this_is_the_IV</p>`;
+}
+
+
+function getChallenge3_3Content() {
+    return `<h1>The Message</h1>
+<p>
+  You have the key and IV — now put them to use. Decrypt the attackers' <a href="/assets/message.txt" download>encrypted message</a> and identify what vulnerabilities they've found.
+</p>
+<p>ex: vulnerability1, vulnerability2, etc</p>`;
+}
+
 // Python execution functionality
 let pyodideReadyPromise = null;
 

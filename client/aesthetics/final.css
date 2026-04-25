@@ -1,0 +1,137 @@
+.final-page .final-introduction > h1 {
+    font-size: clamp(30px, 4vw, 70px);
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.12), 0 2px 60px rgba(0,0,0,0.6);
+}
+
+.final-page .final-introduction > p {
+    padding-top: 5vh;
+    padding-bottom: 7vh;
+    max-width: 70ch;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+.final-page .final-challenges {
+    padding-bottom: 12vh !important;
+}
+
+.final-page .challenge-list {
+    display: grid;
+    gap: 90px;
+    padding: 20px 0;
+}
+
+.final-page .ctf-card {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    position: relative;
+    background: linear-gradient(165deg, #1c1c1c 0%, #121212 50%, #0c0c0c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 28px 32px;
+    color: #f4f4f4;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.26s ease;
+    outline: none;
+    overflow: hidden;
+}
+
+.final-page .ctf-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 55%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.final-page .ctf-card:hover::before,
+.final-page .ctf-card:focus-visible::before {
+    opacity: 1;
+}
+
+.final-page .ctf-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    border-radius: 16px 16px 0 0;
+}
+
+.final-page .ctf-card h3 {
+    font-size: clamp(14px, 1.2vw, 18px);
+    font-weight: 500;
+    margin-bottom: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.98);
+}
+
+.final-page .ctf-card .meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.final-page .ctf-card .meta span {
+    font-size: clamp(11px, 0.82vw, 12px);
+    color: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 4px 12px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.final-page .ctf-card .card-desc {
+    margin-top: 16px;
+    font-size: clamp(12px, 0.9vw, 14px);
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+}
+
+.final-page .ctf-card:hover,
+.final-page .ctf-card:focus-visible {
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 0 40px rgba(255, 255, 255, 0.06),
+        0 12px 50px rgba(0, 0, 0, 0.6);
+    transform: translateY(-6px);
+}
+
+.final-page .ctf-card.solved {
+    border-color: rgba(255, 255, 255, 0.05);
+    opacity: 0.35;
+}
+
+.final-page .ctf-card.solved .meta span,
+.final-page .ctf-card.solved > * {
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #444;
+}
+
+@media (max-width: 860px) {
+    .final-page .challenge-list {
+        gap: 50px;
+    }
+
+    .final-page .ctf-card,
+    .final-page .ctf-card.left,
+    .final-page .ctf-card.right {
+        width: min(470px, 86vw);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
