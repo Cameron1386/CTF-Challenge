@@ -723,11 +723,11 @@ function getChallenge3_1Content() {
 }
 
 function getChallenge3_2Content() {
-    return `<h1>The Breach</h1>
+    return `<h1>The Key</h1>
 <p>
   The attackers are embedding encrypted messages within the network traffic. You've intercepted a <a href="/assets/key.txt" download>transmission</a> containing the AES key and IV hidden inside — decode them, and submit what the key, and IV are in the following format.
 </p>
-<p>ex: this_is_the_key, this_is_the_IV</p>`;
+<p>ex: this_is_the_key,this_is_the_IV (make sure there is no space between the commas)</p>`;
 }
 
 
@@ -736,7 +736,7 @@ function getChallenge3_3Content() {
 <p>
   You have the key and IV — now put them to use. Decrypt the attackers' <a href="/assets/message.txt" download>encrypted message</a> and identify what vulnerabilities they've found.
 </p>
-<p>ex: vulnerability1, vulnerability2, etc</p>`;
+<p>ex: no_logs,unknown_software,etc (make sure there is no space between the commas, the space between words has underscores, and everything is lowercase)</p>`;
 }
 
 // Python execution functionality
