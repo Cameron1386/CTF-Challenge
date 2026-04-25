@@ -718,7 +718,7 @@ function getChallenge3_1Content() {
 
 </p>
 
-<p>ex: joe, 127.0.119.101, deleted_file.txt</p>`;
+<p>ex: joe,127.0.119.101,deleted_file.txt (make sure there is no space between the commas)</p>`;
 
 }
 
